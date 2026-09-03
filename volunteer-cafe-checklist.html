@@ -1,0 +1,502 @@
+<title>ボランティアカフェ 開催準備リスト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+<style>
+/* ============================================================
+   大郷町社会福祉協議会 ボランティアセンター事業
+   ボランティアカフェ 第1回 開催準備リスト（開催日からの逆算）
+   ============================================================ */
+:root{
+  --paper:#F5F7F1; --card:#FFFFFF; --card-2:#FBFCF8;
+  --ink:#22302A; --ink-2:#5A6A61; --ink-3:#86958C;
+  --line:#D9E0D4; --line-2:#EBEFE7;
+  --green:#2E7D5B; --green-bg:#E6F1EA;
+  --cafe:#8A5A2B; --cafe-bg:#F2E9DF;
+  --gold:#B8860B; --gold-bg:#F7EFD7;
+  --shadow:0 1px 0 rgba(34,48,42,.06), 0 6px 18px -12px rgba(34,48,42,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+    --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+    --line:#33403A; --line-2:#2A342E;
+    --green:#77C9A0; --green-bg:#1E3229;
+    --cafe:#D8A874; --cafe-bg:#33251A;
+    --gold:#E0B84F; --gold-bg:#332A15;
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+  --line:#33403A; --line-2:#2A342E;
+  --green:#77C9A0; --green-bg:#1E3229;
+  --cafe:#D8A874; --cafe-bg:#33251A;
+  --gold:#E0B84F; --gold-bg:#332A15;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:16px; line-height:1.8; margin:0; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px 90px}
+h1,h2,h3{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Zen Kaku Gothic New",sans-serif;text-wrap:balance;margin:0;line-height:1.4}
+p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:2px}
+
+/* ---- 見出し ---- */
+.head{padding:40px 0 0}
+.crest{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.14em;
+  font-weight:700;color:var(--cafe);border:1.5px solid var(--cafe);padding:5px 13px;border-radius:2px;
+}
+h1{font-size:clamp(28px,4.8vw,44px);font-weight:900;margin:12px 0 0}
+.lede{font-size:15.5px;color:var(--ink-2);margin-top:12px;max-width:38em}
+
+/* ---- 開催日の記入欄 ---- */
+.slate{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;margin-top:26px;
+  border:2px solid var(--ink);background:var(--card);
+}
+.slate div{padding:14px 18px;border-right:1px solid var(--line)}
+.slate div:last-child{border-right:0}
+.slate dt{font-size:11px;letter-spacing:.16em;color:var(--ink-3);font-weight:700;margin:0}
+.slate dd{margin:10px 0 0;font-size:15px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif;border-bottom:1.5px dotted var(--line);padding-bottom:4px;min-height:1.9em;color:var(--ink-3)}
+@media (max-width:640px){.slate div{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* ---- 進み具合バー ---- */
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding:14px 18px;background:var(--card);border:1px solid var(--line)}
+.bar .cnt{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:17px;font-variant-numeric:tabular-nums;color:var(--cafe)}
+.bar .track{flex:1 1 200px;height:8px;background:var(--line-2);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;width:0;background:var(--cafe);transition:width .25s ease}
+.bar button{
+  font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink-2);
+  background:var(--card-2);border:1px solid var(--line);border-radius:2px;padding:5px 12px;cursor:pointer;
+}
+.bar button:hover{color:var(--ink);border-color:var(--ink-3)}
+.bar .hint{font-size:12.5px;color:var(--ink-3)}
+
+/* ---- 逆算スケジュール ---- */
+.sched{margin-top:14px;border-top:1.5px solid var(--ink)}
+.sched-row{display:grid;grid-template-columns:6.5em 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.sched-row .w{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--cafe);font-variant-numeric:tabular-nums}
+.sched-row p{font-size:14.5px}
+.sched-row p strong{font-weight:700}
+@media (max-width:600px){.sched-row{grid-template-columns:1fr;gap:2px}}
+
+/* ---- グループ ---- */
+.group{margin-top:56px}
+.group-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.group-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--ink-3)}
+h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
+.group hr{height:1.5px;background:currentColor;margin:12px 0 20px;border:0;opacity:.9}
+
+/* ---- セクション ---- */
+.sec{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow);margin-top:18px}
+.sec-head{display:flex;gap:14px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
+.sec-mark{
+  width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:15px;
+}
+.sec-head h3{font-size:18px;font-weight:900;flex:1;min-width:0}
+.sec-count{font-size:12.5px;font-weight:700;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sec-note{padding:12px 20px 0;font-size:13.5px;color:var(--ink-2);line-height:1.85}
+.items{padding:8px 20px 16px}
+
+/* ---- チェック項目 ---- */
+.item{display:grid;grid-template-columns:20px 4.6em 1fr 6.5em;gap:12px;align-items:start;padding:9px 0;border-bottom:1px solid var(--line-2);cursor:pointer}
+.item:last-child{border-bottom:0}
+.item input{
+  appearance:none;-webkit-appearance:none;width:19px;height:19px;margin:3px 0 0;flex:none;
+  border:1.8px solid var(--ink-3);border-radius:2px;background:var(--card);position:relative;cursor:pointer;
+}
+.item input:checked{background:var(--cafe);border-color:var(--cafe)}
+.item input:checked::after{
+  content:"";position:absolute;left:5.5px;top:1.5px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg);
+}
+.item .due{font-size:11.5px;font-weight:700;color:var(--cafe);letter-spacing:.03em;padding-top:5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.item .txt{font-size:14.5px;line-height:1.8;padding-top:2px}
+.item .txt em{font-style:normal;display:block;font-size:13px;color:var(--ink-2);margin-top:2px}
+.item .who{border-bottom:1px dotted var(--line);height:1.4em;margin-top:6px}
+.item input:checked ~ .txt{color:var(--ink-3)}
+.item input:checked ~ .due{color:var(--ink-3)}
+@media (max-width:700px){
+  .item{grid-template-columns:20px 1fr;gap:10px}
+  .item .due{grid-column:2;padding-top:0}
+  .item .txt{grid-column:2}
+  .item .who{grid-column:2;max-width:10em}
+}
+
+.note{margin-top:22px;font-size:13.5px;color:var(--ink-3);line-height:1.95;max-width:46em}
+.warn{margin-top:16px;padding:14px 18px;background:var(--gold-bg);border-left:3px solid var(--gold);font-size:14px;line-height:1.9;color:var(--ink)}
+.footnote{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.9}
+
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  :root{--paper:#fff;--card:#fff;--card-2:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--line:#bbb;--line-2:#ddd;--shadow:none}
+  body{font-size:10.5pt;line-height:1.6}
+  .wrap{max-width:none;padding:0}
+  .head{padding-top:0}
+  h1{font-size:24pt}
+  h2{font-size:15pt}
+  .sec-head h3{font-size:13pt}
+  .item{padding:6px 0}
+  .item .txt{font-size:10pt}
+  .item input{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .bar{display:none}
+  .group{margin-top:22px;break-before:page;page-break-before:always}
+  .group:first-of-type{break-before:auto;page-break-before:auto}
+  .sec,.sched-row,.item,.warn{break-inside:avoid;page-break-inside:avoid}
+  .group-head,h2,.sec-head{break-after:avoid}
+}
+</style>
+
+<div class="wrap">
+
+<header class="head">
+  <span class="crest">大郷町社会福祉協議会　ボランティアセンター事業</span>
+  <h1>ボランティアカフェ<br>開催準備リスト</h1>
+  <p class="lede">第1回（試行）に向けて、開催日から逆算した「やらなければいけないこと」の一覧です。盆栽ボランティアと災害ボランティアセンター運営体験を、当日のプログラムに入れる想定で組んでいます。</p>
+
+  <dl class="slate">
+    <div><dt>開催日</dt><dd>　　年　　月　　日（　）</dd></div>
+    <div><dt>時間</dt><dd>　　:　　 〜 　　:　　</dd></div>
+    <div><dt>会場</dt><dd>　</dd></div>
+    <div><dt>担当</dt><dd>　</dd></div>
+  </dl>
+
+  <div class="bar">
+    <span class="cnt" id="cnt">0 / 0</span>
+    <span class="track"><span class="fill" id="fill"></span></span>
+    <span class="hint">チェックはこの端末に保存されます</span>
+    <button type="button" id="reset">すべて外す</button>
+  </div>
+</header>
+
+<!-- ======== 逆算スケジュール ======== -->
+<section class="group" style="color:var(--ink)">
+  <div class="group-head">
+    <span class="group-eyebrow">全体の流れ</span>
+    <h2>いつ、何が締切になるか</h2>
+  </div>
+  <hr>
+  <p class="note" style="margin-top:0">開催日を決めたら、この表の「◯週前」を実際の日付に置き換えてください。<strong>いちばん動かせないのは、町広報の原稿締切と、回覧が回りきるまでの日数</strong>です。ここから逆算して開催日を決めるほうが、うまくいきます。</p>
+
+  <div class="sched">
+    <div class="sched-row"><span class="w">8週前</span><p><strong>会場を押さえる。</strong>町広報の掲載締切を確認する。開催伺いの決裁を出す</p></div>
+    <div class="sched-row"><span class="w">7週前</span><p>会場の使用申請。チラシの原稿づくり。<strong>盆栽の講師にお願いする</strong></p></div>
+    <div class="sched-row"><span class="w">6週前</span><p>参加記念品を決める。盆栽の内容と材料の数量を決める。予算の執行伺い</p></div>
+    <div class="sched-row"><span class="w">5週前</span><p><strong>チラシ印刷。</strong>災ボラ体験の資料を確認し、縮小版の構成を決める。記念品の発注</p></div>
+    <div class="sched-row"><span class="w">4週前</span><p>回覧を依頼（回りきるのに2〜3週かかります）。盆栽の材料を発注。カフェ備品の買い出し</p></div>
+    <div class="sched-row"><span class="w">3週前</span><p><strong>直接声かけを始める（まず20人）。</strong>掲示を各所へ。表示物・掲示物を作る</p></div>
+    <div class="sched-row"><span class="w">2週前</span><p>役割分担と進行台本。レイアウト図。記念品の袋詰め。持ち帰り資料の印刷</p></div>
+    <div class="sched-row"><span class="w">1週前</span><p><strong>動線のリハーサル（30分）。</strong>材料と備品の最終確認。参加見込み数を固める</p></div>
+    <div class="sched-row"><span class="w">前日</span><p>積み込み。声をかけた方へリマインドの電話。鍵と解錠時刻の確認</p></div>
+    <div class="sched-row"><span class="w">当日</span><p>開場90分前に集合。設営・掲示・給湯・受付準備。終了後15分でふりかえり</p></div>
+    <div class="sched-row"><span class="w">事後</span><p>お礼（3日以内）、開催記録（当日中）、精算（1週間以内）、報告（2週間以内）</p></div>
+  </div>
+
+  <div class="warn">
+    <strong>盆栽ボランティアについて。</strong>「町内の方に教わりながら、小さな鉢をひとつ仕立てて持ち帰る」体験と、その先に<strong>お宅の庭木や鉢の手入れを手伝う活動</strong>を立ち上げる、という想定で書いています。想定がちがう場合（すでに活動している団体との共催、剪定作業そのものを行うなど）は、Gの項目を差し替えてください。
+  </div>
+</section>
+
+<!-- ======== 1. 場をととのえる ======== -->
+<section class="group" style="color:var(--green)">
+  <div class="group-head">
+    <span class="group-eyebrow">1</span>
+    <h2>場をととのえる</h2>
+  </div>
+  <hr>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--green-bg);color:var(--green)">A</span>
+      <h3>会場をおさえる</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">毎回おなじ場所・おなじ曜日で続けられるところを選びます。今回だけの会場ではなく、<strong>1年おなじ日に使えるか</strong>で判断してください。項目の右のうすい線は、担当者名の記入欄です。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">8週前</span><span class="txt">候補の会場を3か所、実際に見に行く<em>駐車場／段差とスロープ／トイレ／お湯が使えるか／歩いて来られる人がいるか</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">8週前</span><span class="txt">土や水を使ってよい場所があるか確認する<em>盆栽で土を使います。屋外スペース、または汚してよい床か。水道と手洗い場が近いか</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">8週前</span><span class="txt">会場を予約する<em>第1回だけでなく、続けて押さえられる曜日・時間で。試行3回分（10月・12月・2月）をまとめて</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">7週前</span><span class="txt">使用申請書を提出。使用料の有無と支払い方法を確認する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">設備を確認する<em>電源の位置と数／暖房／給湯室／机といすの数／ゴミは持ち帰りか／掲示物を壁に貼ってよいか</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">鍵の受け取り方、解錠の時刻、当日の連絡先を確認する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">レイアウト図をつくる<em>受付／テーブル4つ／盆栽コーナー／災ボラ体験コーナー／給湯・ゴミ／記念品の置き場</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--green-bg);color:var(--green)">B</span>
+      <h3>事務の手続き</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">8週前</span><span class="txt">開催伺いの決裁をとる<em>ロードマップの企画書を添えて。運営委員会にも報告</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">予算の執行伺い<em>記念品／盆栽の材料／茶菓／印刷／講師謝礼</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">ボランティア活動保険の加入状況を確認する<em>盆栽の道具（はさみ）と災ボラ体験の資機材を扱います。参加者に保険が要るかを整理し、必要なら加入用紙を用意</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">個人情報の扱いを決める<em>参加者カードの保管場所・保管期間・持ち出しの可否。世話人・協力者にも書面で説明</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">写真撮影の同意の取り方を決める<em>受付での口頭確認と、会場の掲示。写りたくない方の名札に印をつける方法まで</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">食物アレルギーの対応を決める<em>お菓子は個包装で、表示のあるものを。空袋を当日まで残しておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">前日</span><span class="txt">会場使用料の支払い、釣り銭の準備<em>参加費100円のため、100円玉と500円玉を用意。出納の記録用紙も</em></span><span class="who"></span></label>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 2. 人を呼ぶ ======== -->
+<section class="group" style="color:var(--gold)">
+  <div class="group-head">
+    <span class="group-eyebrow">2</span>
+    <h2>人を呼ぶ</h2>
+  </div>
+  <hr>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--gold-bg);color:var(--gold)">C</span>
+      <h3>チラシと広報</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">第1回は、チラシだけでは人が来ません。<strong>紙は「知ってもらう」ため、電話と手渡しは「来てもらう」ため</strong>と割り切って、両方やります。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">8週前</span><span class="txt">町広報への掲載を依頼する<em>原稿の締切が前月◯日など、かなり早いことがあります。まずこの締切を確認してから開催日を確定する</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">7週前</span><span class="txt">チラシの原稿をつくる<em>ロードマップの「住民のみなさんへ」の文面をそのまま使えます。盆栽と災ボラ体験のことも書き足す</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">チラシに「汚れてもよい服装で」と入れる<em>盆栽で土を使うため。エプロン持参の案内も</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">チラシを印刷する<em>部数のめやす：回覧用＋窓口＋手渡し用＋掲示用。多めに刷って次回にも使えるよう、日付は刷り込みか別紙かを決める</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">区長・行政区へ回覧を依頼する<em>回りきるまで2〜3週間かかります。開催3週前には回りはじめるよう逆算</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">掲示をお願いして回る<em>公民館／支所／診療所／商店／郵便局／スーパー／温泉施設／集会所</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">直接声をかける（まず20人）<em>ボランティア入門講座の修了者／サロン参加者／登録ボランティア。名簿を見ながら、電話か手渡しで</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">民生委員児童委員・地区社協・地域包括支援センターへ情報提供<em>気になっている方に声をかけてもらう。「誘ってあげてください」と具体的に頼む</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">ホームページ・SNSに掲載する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週前</span><span class="txt">参加の見込み数をまとめる<em>茶菓・記念品・盆栽材料の数を決めるため。予備を3〜5人分みておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">前日</span><span class="txt">声をかけた方へリマインドの電話<em>「明日お待ちしています」の一本で、来場がはっきり変わります</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--gold-bg);color:var(--gold)">D</span>
+      <h3>参加記念品</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">高価なものは要りません。<strong>持ち帰って家で目に入り、次回を思い出すもの</strong>が効きます。次回の日付を書いた小さなカードを必ず添えます。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">何を渡すか決める<em>案：花の種の小袋／お茶のティーバッグ／盆栽の小さな苗／町内の作業所でつくったもの（＝作業所支援にもなります）</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">単価と数量を決める<em>1人あたりの金額 × 見込み人数 ＋ 予備10個。予算内におさまるか確認</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">見積をとり、発注する<em>納期を確認。名入れをする場合はさらに2週間みる</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">納品を確認し、数を数える</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">添えるカードをつくる<em>「次回は◯月◯日です」「お問い合わせはボランティアセンターへ」。次につながる一言を入れる</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">袋詰めをする<em>記念品＋カード＋次回チラシをセットに。当日あわてないよう、前もって</em></span><span class="who"></span></label>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 3. 中身をつくる ======== -->
+<section class="group" style="color:var(--cafe)">
+  <div class="group-head">
+    <span class="group-eyebrow">3</span>
+    <h2>中身をつくる</h2>
+  </div>
+  <hr>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--cafe-bg);color:var(--cafe)">E</span>
+      <h3>カフェで使う備品</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">そのまま<strong>当日の積み込みリスト</strong>として使えます。前日に、この欄を見ながら車に積んでください。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">飲みもの<em>お茶（温・冷）／コーヒー／紅茶／砂糖・ミルク／麦茶。夏冬で入れ替える</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週前</span><span class="txt">お菓子<em>個包装で、原材料表示のあるもの。やわらかいものも用意する（入れ歯の方のため）</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">紙コップ・紙皿・おしぼり・つまようじ・ゴミ袋（分別の数だけ）</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">保温ポット2本、やかん、給湯の段取り<em>会場で沸かせるか、社協から運ぶかを決めておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">名札（貼るタイプ）とケース、太めのサインペン<em>呼ばれたい名前を大きく書いてもらいます。細いペンは使わない</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">参加者カード、筆記用具、クリップボード、受付名簿</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">テーブルクロス、花か観葉植物（1テーブルに1つ）<em>「会議」ではなく「カフェ」に見せるための、いちばん安い方法です</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">小さなスピーカー（BGM用・小音量）<em>沈黙が気にならなくなり、はじめての方が入りやすくなります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">救急箱、消毒、絆創膏、体温計、ティッシュ<em>盆栽ではさみを使うため、絆創膏は多めに</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">カメラ（記録用）、予備の電池</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">マスキングテープ、養生テープ、模造紙、はさみ、油性ペン</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">前日</span><span class="txt">積み込みリストで最終確認をする<em>この欄をそのまま印刷して、チェックしながら積む</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--cafe-bg);color:var(--cafe)">F</span>
+      <h3>会場に貼る表示物</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">当日つくると必ず間に合いません。<strong>すべて前日までに刷って、丸めて持っていく</strong>。会場の壁にテープが貼れるかは、事前に確認しておきます。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">建物の入口から会場までの順路表示（矢印を3枚以上）<em>はじめての方は、入口で引き返します。外の道路からの1枚目がいちばん大事</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">受付の看板「ボランティアカフェ　受付」</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">本日の流れ（90分の進行を大きく1枚）<em>途中から来た方が、見れば分かるように</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">テーブル番号（1〜4）</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">「写真を撮ります。写りたくない方は受付でお申し出ください」の掲示</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">参加費のご案内（100円・お茶とお菓子代です）</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">盆栽コーナーの表示と、手順の掲示<em>「土を入れる → 苗を置く → 水をやる」を、写真かイラストで3ステップに</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">災ボラ体験コーナーの表示（受付／ニーズ受付／マッチング／送り出しの4か所）<em>本物の災害ボランティアセンターと同じ順に並べる。これ自体が説明になります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">次回のご案内（日付を大きく1枚）<em>帰りぎわに必ず目に入る位置へ</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">ボランティア登録・活動見学のご案内<em>用紙を横に置いておく。その場で書いて帰れるように</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">町でいま動いている活動の紹介パネル<em>配食・見守り・サロン・除雪。写真を貼るだけでよい</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--cafe-bg);color:var(--cafe)">G</span>
+      <h3>盆栽ボランティアの準備</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">体験して終わりにせず、<strong>「この続きをやりたい人」の受け皿</strong>まで当日つくります。庭木や鉢の手入れに困っているお宅は必ずあるので、そこへつなぐ活動に育てます。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">7週前</span><span class="txt">教えてくれる方を決めて、お願いに行く<em>町内の盆栽の名人／愛好会／シルバー人材センター／園芸店。「教える」より「一緒にやる」形でお願いする</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">打ち合わせ：何をどこまでやるか決める<em>90分のうち何分使うか（30〜40分がめやす）。作業の難しさ、いすに座ったままできるか</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">内容を確定する<em>案：小さな苗を鉢に植えて持ち帰る／松の芽切り／水やりと置き場所の話。持ち帰れる形にすると満足度が高い</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">材料の数量を決める<em>参加見込み ＋ 予備3セット。当日の飛び込み参加に備える</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">材料を発注する<em>苗木／鉢／用土／鉢底ネット／鉢底石／化粧砂／ラベル</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">道具をそろえる<em>剪定ばさみ（人数分は要りません。3〜4本を回す）／ピンセット／じょうろ／園芸用の針金／割り箸／土入れ</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">汚れ対策をそろえる<em>ブルーシート／新聞紙／テーブルに敷くもの／雑巾／バケツ／ほうきとちりとり</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">軍手（人数分＋予備5）、エプロン<em>手の汚れを気にして参加をやめる方がいます。軍手は必ず余分に</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">手洗い場所と、そこまでの動線を決める<em>土のついた手で歩く道すじに、新聞紙を敷いておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">持ち帰り用の袋・トレーを用意する<em>土がこぼれない紙袋。車に載せても倒れない形のもの</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">「育て方」の1枚をつくって印刷する<em>水やり／置き場所／冬の越し方／困ったときの連絡先。持ち帰ったあとも社協とつながる紙になります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">けがへの備えを確認する<em>はさみを使います。保険の対象になるか、応急手当の担当は誰か</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">「この続きをやりたい人」の名簿をその場でつくる<em>庭木・鉢の手入れを手伝う活動へ。教えてくれた方にも、世話人として関わってもらえるか声をかける</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--cafe-bg);color:var(--cafe)">H</span>
+      <h3>災ボラ体験の資料</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <p class="sec-note">福祉教育プログラムの「災害ボランティアセンター運営体験」を、<strong>カフェの中でできる20〜30分の縮小版</strong>に組み直します。資料はすでにあるものを流用してください。</p>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">既存の資料一式を出して、そろっているか確認する<em>福祉教育プログラム「災害ボランティアセンター運営体験」の様式・進行表</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">縮小版の構成を決める<em>受付 → ニーズ受付 → マッチング → 送り出し の4場面を、20〜30分で通す。説明は短く、動かす時間を長く</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">ボランティア受付票を必要部数印刷する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">ニーズ受付票を印刷し、想定の事例を5〜8件つくる<em>大郷町で実際に起こりうる困りごとで。「二階まで水が来た」「ひとり暮らしで家財が出せない」など、地名を入れると急に自分ごとになります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">マッチング用のボードをつくる<em>模造紙とカード、マグネットかマスキングテープ。人数と作業内容を貼り合わせる形に</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">役割の名札をつくる<em>受付／ニーズ／マッチング／資材／送り出し。首から下げる形にすると、役になりきれます</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">資機材の見本を1つずつ用意する<em>スコップ／土のう袋／長靴／軍手／ヘルメット／一輪車。写真より、本物が1つあるほうが伝わります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">説明用の掲示をつくる<em>「大郷町で災害が起きたら、災害ボランティアセンターはどこに、いつ立ち上がるか」を1枚に</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">ボランティア活動保険の説明資料と加入用紙を用意する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">進行台本をつくる<em>誰がどの役をやり、何を言うか。参加者が少なかった場合の縮め方も書いておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">ふりかえりの問いを決めておく<em>「やってみて、いちばん難しかったのはどこですか」。ここで平時のつながりの話につなげます</em></span><span class="who"></span></label>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 4. 当日と、そのあと ======== -->
+<section class="group" style="color:var(--ink)">
+  <div class="group-head">
+    <span class="group-eyebrow">4</span>
+    <h2>当日と、そのあと</h2>
+  </div>
+  <hr>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--line-2);color:var(--ink)">I</span>
+      <h3>当日の運営</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">役割分担表をつくる<em>受付／お茶／進行／盆栽の補助／災ボラ／記録・写真／片付け。ひとり2役までにする</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">進行台本と、分単位のタイムテーブルをつくる<em>盆栽と災ボラを入れると90分は窮屈です。どちらかを次回に回す判断も、ここで決めておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">台本とレイアウト図を、関わる全員に配る<em>講師・世話人候補・協力者にも。当日はじめて渡さない</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週前</span><span class="txt">動線のリハーサルをする（30分でよい）<em>入口から受付、席、盆栽コーナー、手洗い、災ボラコーナーまで、実際に歩いてみる</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">前日</span><span class="txt">積み込み<em>Eの備品リストと、盆栽の材料、災ボラの資料一式、表示物、記念品</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">開場90分前に集合。設営・掲示・給湯・受付準備<em>机といすの数を実際に数える。90分前でも足りないことがあります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">はじめての方に、世話人か職員がひとりつく<em>いちばん大事な役です。担当を先に決めておく</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">記録をとる<em>参加者数／はじめて来た人／出た話題／気になった方／つないだ先／写真</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">「やってみたいこと」「出られる曜日」を書いて帰ってもらう</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">終了後15分でふりかえり。<strong>次回に変えることを1つだけ決める</strong><em>その場で決めないと、次回まで持ち越されて忘れます</em></span><span class="who"></span></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-mark" style="background:var(--line-2);color:var(--ink)">J</span>
+      <h3>終わったあと</h3>
+      <span class="sec-count" data-count></span>
+    </div>
+    <div class="items">
+      <label class="item"><input type="checkbox"><span class="due">当日中</span><span class="txt">開催記録を書く<em>記憶が新しいうちに。第1期以降の評価は、この記録の積み重ねでしか出せません</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3日以内</span><span class="txt">講師・協力者・会場へお礼<em>盆栽を教えてくれた方には、当日の写真を添えて</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週以内</span><span class="txt">写真を整理し、使ってよいものを選ぶ<em>写りたくないと申し出た方が入っていないか、必ず確認する</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週以内</span><span class="txt">支出を精算する</span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">1週以内</span><span class="txt">参加者へ次回のお知らせ<em>希望された方へ。第2回の日付だけでも早く伝える</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週以内</span><span class="txt">運営委員会・事務局へ報告する<em>人数だけでなく、その日に生まれた会話や関係も書く</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週以内</span><span class="txt">参加者カードを整理し、保管する<em>次回「カフェ以外で会いましたか」を聞くための土台になります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週以内</span><span class="txt">盆栽の続きを希望した方へ連絡する<em>熱があるうちに。2週間空くと、気持ちは戻ってしまいます</em></span><span class="who"></span></label>
+    </div>
+  </div>
+</section>
+
+<p class="footnote">
+  ボランティアカフェ　第1回 開催準備リスト（開催日からの逆算）　第1版<br>
+  大郷町社会福祉協議会　ボランティアセンター事業　2026年9月<br>
+  ※ 週数・数量はめやすです。会場の予約状況と町広報の締切に合わせて、前後させてください。<br>
+  ※ A4縦で印刷できます（印刷設定で「背景のグラフィック」にチェックを入れてください）。
+</p>
+
+</div>
+
+<script>
+(function(){
+  var KEY = "osato-vc-checklist-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.item input[type=checkbox]'));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+
+  boxes.forEach(function(b, i){
+    b.id = "chk" + i;
+    if (saved[b.id]) b.checked = true;
+  });
+
+  function save(){
+    var out = {};
+    boxes.forEach(function(b){ if (b.checked) out[b.id] = 1; });
+    try { localStorage.setItem(KEY, JSON.stringify(out)); } catch (e) {}
+  }
+
+  function paint(){
+    var done = boxes.filter(function(b){ return b.checked; }).length;
+    var cnt = document.getElementById('cnt');
+    var fill = document.getElementById('fill');
+    if (cnt) cnt.textContent = done + " / " + boxes.length;
+    if (fill) fill.style.width = boxes.length ? (done / boxes.length * 100) + "%" : "0%";
+    document.querySelectorAll('.sec').forEach(function(sec){
+      var all = sec.querySelectorAll('.item input[type=checkbox]');
+      var d = sec.querySelectorAll('.item input[type=checkbox]:checked').length;
+      var label = sec.querySelector('[data-count]');
+      if (label) label.textContent = d + " / " + all.length;
+    });
+  }
+
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){ save(); paint(); });
+  });
+
+  var reset = document.getElementById('reset');
+  if (reset) reset.addEventListener('click', function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    save(); paint();
+  });
+
+  paint();
+})();
+</script>
