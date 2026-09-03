@@ -1,0 +1,902 @@
+<title>ボランティアカフェ ロードマップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+<style>
+/* ============================================================
+   大郷町社会福祉協議会 ボランティアセンター事業
+   「ボランティアカフェ」構想と行程（ロードマップ）
+   ------------------------------------------------------------
+   色の意味：緑＝社協が回す／金＝社協と住民で回す／茶＝住民が回す
+   ============================================================ */
+
+:root{
+  --paper:#F5F7F1;
+  --card:#FFFFFF;
+  --card-2:#FBFCF8;
+  --ink:#22302A;
+  --ink-2:#5A6A61;
+  --ink-3:#86958C;
+  --line:#D9E0D4;
+  --line-2:#EBEFE7;
+  --green:#2E7D5B;
+  --green-bg:#E6F1EA;
+  --cafe:#8A5A2B;
+  --cafe-bg:#F2E9DF;
+  --gold:#B8860B;
+  --gold-bg:#F7EFD7;
+  --shadow:0 1px 0 rgba(34,48,42,.06), 0 6px 18px -12px rgba(34,48,42,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+    --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+    --line:#33403A; --line-2:#2A342E;
+    --green:#77C9A0; --green-bg:#1E3229;
+    --cafe:#D8A874; --cafe-bg:#33251A;
+    --gold:#E0B84F; --gold-bg:#332A15;
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+  --line:#33403A; --line-2:#2A342E;
+  --green:#77C9A0; --green-bg:#1E3229;
+  --cafe:#D8A874; --cafe-bg:#33251A;
+  --gold:#E0B84F; --gold-bg:#332A15;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:16px; line-height:1.85; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px 96px}
+h1,h2,h3,h4{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Zen Kaku Gothic New",sans-serif;text-wrap:balance;margin:0;line-height:1.4}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:2px}
+strong{font-weight:700}
+
+/* ---------- 表紙 ---------- */
+.cover{padding:44px 0 8px}
+.crest{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:13px;letter-spacing:.14em;font-weight:700;color:var(--green);
+  border:1.5px solid var(--green);padding:5px 13px;border-radius:2px;
+}
+.crest svg{width:17px;height:17px;flex:none}
+h1{font-size:clamp(34px,6vw,58px);font-weight:900;letter-spacing:.01em;margin:12px 0 0;line-height:1.2}
+h1 .accent{background:linear-gradient(transparent 62%, var(--gold-bg) 62%);padding:0 .1em}
+.doc-kind{font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--ink-3);margin-top:22px}
+.sub{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  font-size:clamp(17px,2.4vw,22px);font-weight:700;color:var(--green);margin-top:14px;
+}
+.lede{font-size:clamp(15px,2vw,17.5px);color:var(--ink-2);margin-top:14px;max-width:34em}
+.cover-facts{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:28px;
+  border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line);
+}
+.cover-facts div{flex:1 1 160px;padding:14px 16px 14px 0}
+.cover-facts dt{font-size:11.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:700;margin:0}
+.cover-facts dd{margin:3px 0 0;font-size:15px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+
+/* ---------- セクション ---------- */
+section{margin-top:64px}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.sec-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--ink-3)}
+h2{font-size:clamp(22px,3.4vw,30px);font-weight:900}
+.sec-note{color:var(--ink-2);font-size:15px;margin-top:10px;max-width:42em}
+.rule{height:1.5px;background:var(--ink);margin:14px 0 26px;border:0}
+
+/* ---------- ビジョンの掲示 ---------- */
+.vision{
+  border:2.5px solid var(--ink);background:var(--card);
+  padding:34px 34px 30px;margin-top:8px;
+}
+.vision .v-label{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--ink-3)}
+.vision .v-main{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;
+  font-size:clamp(24px,4.2vw,40px);line-height:1.5;margin-top:14px;text-wrap:balance;
+}
+.vision .v-main em{font-style:normal;background:linear-gradient(transparent 60%, var(--green-bg) 60%);padding:0 .08em}
+.vision .v-body{margin-top:20px;font-size:16px;color:var(--ink-2);max-width:40em;line-height:2}
+.vision .v-body + .v-body{margin-top:12px}
+
+/* ---------- 3つの考え方 ---------- */
+.points{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.point{background:var(--card);padding:22px 20px}
+.point svg{width:38px;height:38px;color:var(--green);display:block;margin-bottom:12px}
+.point h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.point p{font-size:14px;color:var(--ink-2);line-height:1.8}
+
+/* ---------- 環の図 ---------- */
+.cycle{margin-top:6px;overflow-x:auto}
+.cycle svg{width:100%;min-width:640px;height:auto;display:block}
+.cycle-legend{font-size:13.5px;color:var(--ink-2);margin-top:12px;line-height:1.9}
+
+/* ---------- ロードマップ 帯 ---------- */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10px}
+.tl-col{border-top:2.5px solid currentColor;padding:22px 16px 0 0;position:relative}
+.tl-col .dot{
+  position:absolute;top:-10px;left:0;width:17px;height:17px;border-radius:50%;
+  background:var(--paper);border:3.5px solid currentColor;
+}
+.tl-col .yr{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tl-col .nm{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:18px;margin-top:4px;color:currentColor}
+.tl-col .gl{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.75}
+.tl-key{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:22px;font-size:12.5px;color:var(--ink-2)}
+.tl-key span{display:inline-flex;align-items:center;gap:7px}
+.tl-key i{width:22px;height:4px;border-radius:2px;background:currentColor;display:block}
+@media (max-width:720px){
+  .tl{grid-template-columns:1fr}
+  .tl-col{padding:22px 0 20px 0}
+}
+
+/* ---------- 期のカード ---------- */
+.phase{
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
+  margin-top:22px;overflow:hidden;
+}
+.phase-top{display:flex;gap:16px;align-items:flex-start;padding:20px 24px 16px;border-bottom:1px solid var(--line-2)}
+.phase-no{
+  width:56px;height:56px;flex:none;border-radius:50%;display:grid;place-items:center;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:13px;line-height:1.25;text-align:center;
+}
+.phase-titles{flex:1;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:7px}
+.chip{font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:2px;background:var(--line-2);color:var(--ink-2)}
+h3.phase-name{font-size:clamp(19px,2.6vw,24px);font-weight:900}
+.phase-catch{font-size:15px;margin-top:7px;color:var(--ink-2)}
+.phase-body{display:grid;grid-template-columns:1.5fr 1fr}
+.phase-main{padding:20px 24px 24px;display:flex;flex-direction:column;gap:16px}
+.phase-side{padding:20px 24px 24px;border-left:1px solid var(--line-2);background:var(--card-2);display:flex;flex-direction:column;gap:16px}
+@media (max-width:760px){
+  .phase-body{grid-template-columns:1fr}
+  .phase-side{border-left:0;border-top:1px solid var(--line-2)}
+}
+.block h4{font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--ink-3);margin-bottom:7px}
+.block p{font-size:15px;line-height:1.9}
+.block ul{margin:0;padding-left:1.25em;font-size:14.5px;line-height:1.95;color:var(--ink)}
+.block li::marker{color:var(--ink-3)}
+.ask{border-left:3px solid currentColor;padding-left:14px}
+.ask p{color:var(--ink);font-weight:500}
+dl.goal{margin:0;display:grid;grid-template-columns:1fr auto;gap:8px 14px;font-size:13.5px;align-items:baseline}
+dl.goal dt{color:var(--ink-2);border-bottom:1px dotted var(--line);padding-bottom:3px}
+dl.goal dd{margin:0;font-weight:700;font-family:"Zen Maru Gothic",sans-serif;font-variant-numeric:tabular-nums;border-bottom:1px dotted var(--line);padding-bottom:3px}
+
+/* ---------- 表 ---------- */
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+.tbl caption{text-align:left;font-size:13px;color:var(--ink-3);padding-bottom:8px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
+.tbl thead th{font-size:11.5px;letter-spacing:.12em;color:var(--ink-3);border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.tbl tr.total td{border-bottom:0;border-top:1.5px solid var(--ink);font-weight:700}
+.tbl .layer{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;white-space:nowrap}
+.tbl-scroll{overflow-x:auto}
+
+/* ---------- 時間割 ---------- */
+.flow{display:grid;margin-top:8px}
+.step{display:grid;grid-template-columns:6.5em 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.when{font-size:13px;font-weight:700;color:var(--cafe);letter-spacing:.06em;font-variant-numeric:tabular-nums;padding-top:3px}
+.step h3{font-size:17px;font-weight:900;margin-bottom:4px}
+.step p{font-size:14.5px;color:var(--ink-2)}
+.step .todo{margin-top:9px;font-size:13.5px;background:var(--cafe-bg);color:var(--ink);padding:9px 13px;border-radius:2px;display:inline-block}
+@media (max-width:640px){.step{grid-template-columns:1fr;gap:6px}}
+
+/* ---------- つまずき ---------- */
+.risks{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.risk{background:var(--card);padding:18px 20px}
+.risk h3{font-size:15.5px;font-weight:700;margin-bottom:8px;display:flex;gap:9px}
+.risk h3::before{content:"！";font-weight:900;color:var(--gold);font-size:16px;flex:none}
+.risk p{font-size:14px;color:var(--ink-2);padding-left:22px;line-height:1.85}
+.risk p .fix{color:var(--ink);font-weight:700}
+
+/* ---------- 直近の宿題 ---------- */
+.todos{display:grid;gap:0;border-top:1.5px solid var(--ink)}
+.todo-row{display:grid;grid-template-columns:7em 1fr 9em;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.todo-row .mo{font-size:13px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.todo-row .wh{font-size:12.5px;color:var(--ink-2);text-align:right}
+.todo-row p{font-size:15px}
+.todo-row p .k{font-weight:700}
+@media (max-width:640px){
+  .todo-row{grid-template-columns:1fr;gap:4px}
+  .todo-row .wh{text-align:left}
+}
+
+/* ---------- 住民向けページ ---------- */
+.poster{border:2.5px solid var(--cafe);background:var(--card);padding:36px 34px 32px}
+.poster .p-eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--cafe)}
+.poster h2{font-size:clamp(26px,4.6vw,40px);margin-top:12px}
+.poster .p-lead{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:clamp(17px,2.4vw,21px);line-height:1.75;margin-top:16px;color:var(--ink)}
+.poster .p-body{font-size:15.5px;color:var(--ink-2);margin-top:18px;line-height:2;max-width:40em}
+.poster ul{margin:18px 0 0;padding-left:1.25em;font-size:15.5px;line-height:2}
+.poster .p-foot{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.poster .org{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:16.5px;color:var(--ink);display:block;margin-bottom:4px}
+.poster .tel{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:21px;color:var(--cafe);font-variant-numeric:tabular-nums;vertical-align:-2px}
+.poster .tel-label{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ink-3);margin-right:6px}
+
+.note{margin-top:20px;font-size:13.5px;color:var(--ink-3);line-height:1.95;max-width:44em}
+.footnote{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.9}
+
+/* ---------- 印刷（A3縦） ---------- */
+@media print{
+  @page{size:A3 portrait;margin:14mm}
+  :root{--paper:#fff;--card:#fff;--card-2:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--line:#bbb;--line-2:#ddd;--shadow:none}
+  body{font-size:12pt;line-height:1.75}
+  .wrap{max-width:none;padding:0}
+  .cover{padding-top:0}
+  h1{font-size:36pt}
+  h2{font-size:19pt}
+  .sub{font-size:15pt}
+  .lede{font-size:12.5pt;max-width:42em}
+  .vision .v-main{font-size:26pt}
+  h3.phase-name{font-size:16pt}
+  .block p,.block ul{font-size:11.5pt}
+  .tbl{font-size:11pt}
+  .poster h2{font-size:26pt}
+  section{margin-top:26px}
+  section.pg{break-before:page;page-break-before:always;margin-top:0}
+  .phase,.risk,.point,.step,.vision,.poster,.todo-row,.cycle{break-inside:avoid;page-break-inside:avoid}
+  .sec-head,h2{break-after:avoid}
+  .cycle svg{min-width:0}
+  a{text-decoration:none}
+}
+</style>
+
+<div class="wrap">
+
+<!-- ======================== 表紙 ======================== -->
+<header class="cover">
+  <span class="crest">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 19h13a4 4 0 0 0 4-4v-1H4z"/><path d="M17 14h2.5a2.5 2.5 0 0 0 0-5H17"/>
+      <path d="M8 6c0-1 1-1.4 1-2.5M12 6c0-1 1-1.4 1-2.5"/>
+    </svg>
+    大郷町社会福祉協議会　ボランティアセンター事業
+  </span>
+
+  <h1>ボランティア<span class="accent">カフェ</span></h1>
+  <p class="doc-kind">新規プログラム　構想と行程（ロードマップ）</p>
+  <p class="sub">困ってから出会うのでは、間に合わない。</p>
+  <p class="lede">災害のとき、体が弱ったとき、ひとりになったとき。そこで初めて人とつながろうとしても、遅いのです。だから <strong>平時のうちに、顔見知りになっておく</strong>。ボランティアカフェは、そのための場です。</p>
+
+  <dl class="cover-facts">
+    <div><dt>試行のはじまり</dt><dd>2026年10月（令和8年度後半）</dd></div>
+    <div><dt>かたち</dt><dd>月1回・90分・出入り自由</dd></div>
+    <div><dt>対象</dt><dd>町内にお住まいのどなたでも</dd></div>
+    <div><dt>4年後の姿</dt><dd>住民の手で回っている</dd></div>
+  </dl>
+</header>
+
+<!-- ======================== ビジョン ======================== -->
+<section>
+  <div class="sec-head">
+    <span class="sec-eyebrow">めざすところ</span>
+    <h2>この事業が、最後にたどりつきたい場所</h2>
+  </div>
+  <hr class="rule">
+
+  <div class="vision">
+    <p class="v-label">VISION</p>
+    <p class="v-main">こまったとき、<br>「あの人に<em>聞いてみよう</em>」が<br>浮かぶ町へ。</p>
+    <p class="v-body">誰ひとり取り残されない地域は、制度だけではつくれません。行政や社協が見つけられる困りごとには、かならず限りがあります。最後にその人のそばにいるのは、<strong>となりに住んでいる、顔を知っている誰か</strong>です。</p>
+    <p class="v-body">だから私たちは、支援の網を細かくすることと同じくらい、<strong>住民どうしが平時から気にかけ合う関係</strong>をつくることに力を注ぎます。孤立・孤独のない地域は、一人ひとりが誰かを気にかけることの積み重ねでしか実現しません。ボランティアカフェは、その積み重ねが始まる入口です。</p>
+  </div>
+
+  <p class="note">※ この事業の位置づけ：孤独・孤立対策推進法（2024年4月施行）が求める「日常的なつながりの場づくり」、および地域共生社会づくりにあたります。町の地域福祉活動計画・地域福祉計画のどの項目に紐づけるかは、決裁前に確認してください。</p>
+</section>
+
+<!-- ======================== 3つの考え方 ======================== -->
+<section>
+  <div class="sec-head">
+    <span class="sec-eyebrow">住民のみなさんと共有したいこと</span>
+    <h2>ボランティアカフェ、3つの考え方</h2>
+  </div>
+  <hr class="rule">
+  <div class="points">
+    <div class="point">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 4"/>
+      </svg>
+      <h3>つながりは「平時」につくる</h3>
+      <p>困ってから名簿を配っても、間に合いません。なんでもない日にお茶を飲んだ相手だから、いざというとき声をかけられます。</p>
+    </div>
+    <div class="point">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M24 41S9 32 9 21a7.5 7.5 0 0 1 15-3 7.5 7.5 0 0 1 15 3c0 11-15 20-15 20Z"/>
+      </svg>
+      <h3>特別な人がするものではない</h3>
+      <p>資格も経験もいりません。「気にかける」ことがもう活動です。できることと、出られる時間から始めれば十分です。</p>
+    </div>
+    <div class="point">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 18h20l-6-6M40 30H20l6 6"/>
+      </svg>
+      <h3>支える側と支えられる側は入れ替わる</h3>
+      <p>今日お茶を出した人が、来年は出してもらう側かもしれません。だから「助けて」と言いやすい関係を、先につくっておきます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== なぜカフェか ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">この事業が要る理由</span>
+    <h2>いま、環がひとつ欠けています</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">社協にはすでに、知ってもらう場（講座）と、やってみる場（体験）があります。けれども、受けた人が<strong>「また会う」場所</strong>がありません。そのため、せっかく生まれた関心とつながりが、その日かぎりで途切れています。ボランティアカフェは、講座と活動のあいだをつなぐ、欠けている環です。</p>
+
+  <div class="cycle">
+    <svg viewBox="0 0 960 214" role="img" aria-label="つながりの環：知る、やってみる、また会う（ボランティアカフェ）、活動する、さそう、の順にめぐり、さそわれた人がまた入ってくる循環の図">
+      <defs>
+        <marker id="vc-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" style="fill:var(--ink-3)"></path>
+        </marker>
+        <marker id="vc-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" style="fill:var(--cafe)"></path>
+        </marker>
+      </defs>
+
+      <text x="480" y="14" text-anchor="middle" style="fill:var(--cafe);font-size:12.5px;font-weight:700;letter-spacing:.1em;font-family:'Zen Kaku Gothic New',sans-serif">ここが、いま欠けている環</text>
+
+      <g style="font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif">
+        <rect x="0"   y="26" width="160" height="78" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"></rect>
+        <text x="80"  y="62" text-anchor="middle" style="fill:var(--ink);font-size:19px;font-weight:900">知る</text>
+        <text x="80"  y="85" text-anchor="middle" style="fill:var(--ink-3);font-size:12.5px;font-weight:700">ボランティア入門講座</text>
+
+        <rect x="200" y="26" width="160" height="78" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"></rect>
+        <text x="280" y="62" text-anchor="middle" style="fill:var(--ink);font-size:19px;font-weight:900">やってみる</text>
+        <text x="280" y="85" text-anchor="middle" style="fill:var(--ink-3);font-size:12.5px;font-weight:700">ふくし体験・防災</text>
+
+        <rect x="400" y="26" width="160" height="78" style="fill:var(--cafe-bg);stroke:var(--cafe);stroke-width:2.5"></rect>
+        <text x="480" y="62" text-anchor="middle" style="fill:var(--cafe);font-size:19px;font-weight:900">また会う</text>
+        <text x="480" y="85" text-anchor="middle" style="fill:var(--cafe);font-size:12.5px;font-weight:700">ボランティアカフェ</text>
+
+        <rect x="600" y="26" width="160" height="78" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"></rect>
+        <text x="680" y="62" text-anchor="middle" style="fill:var(--ink);font-size:19px;font-weight:900">活動する</text>
+        <text x="680" y="85" text-anchor="middle" style="fill:var(--ink-3);font-size:12.5px;font-weight:700">登録・見学・継続</text>
+
+        <rect x="800" y="26" width="160" height="78" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"></rect>
+        <text x="880" y="62" text-anchor="middle" style="fill:var(--ink);font-size:19px;font-weight:900">さそう</text>
+        <text x="880" y="85" text-anchor="middle" style="fill:var(--ink-3);font-size:12.5px;font-weight:700">口コミで次の人へ</text>
+      </g>
+
+      <g style="stroke:var(--ink-3);stroke-width:2;fill:none" marker-end="url(#vc-ar)">
+        <path d="M166 65 H190"></path>
+        <path d="M366 65 H390"></path>
+        <path d="M566 65 H590"></path>
+        <path d="M766 65 H790"></path>
+      </g>
+
+      <path d="M880 110 V174 H80 V116" style="stroke:var(--cafe);stroke-width:2;fill:none;stroke-dasharray:6 5" marker-end="url(#vc-arc)"></path>
+      <text x="480" y="196" text-anchor="middle" style="fill:var(--cafe);font-size:13px;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif">さそわれた人が、また入ってくる</text>
+    </svg>
+  </div>
+
+  <p class="cycle-legend">この環が回りはじめると、担い手は募集しなくても増えていきます。逆に「また会う」場所がないかぎり、私たちは毎年ゼロから人を探し続けることになります。<strong>ボランティアカフェは、集客のための企画ではなく、環を閉じるための投資です。</strong></p>
+</section>
+
+<!-- ======================== ロードマップ ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">ROADMAP</span>
+    <h2>4年かけて、住民の手にわたすまで</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">はじめから完成形をめざしません。<strong>小さく試して、続けて、広げて、手放す</strong>。この順番で進みます。社協が主催し続けるかぎり、それは社協の事業のままで、住民のものにはならないからです。時期は目安です。予算年度と職員体制に合わせて調整してください。</p>
+
+  <div class="tl">
+    <div class="tl-col" style="color:var(--green)">
+      <span class="dot"></span>
+      <p class="yr">2026.10 — 2027.3</p>
+      <p class="nm">準備期</p>
+      <p class="gl">3回だけ試す。来るかどうかを、机上でなく現場で確かめる。</p>
+    </div>
+    <div class="tl-col" style="color:var(--green)">
+      <span class="dot"></span>
+      <p class="yr">2027年度</p>
+      <p class="nm">第1期・定着</p>
+      <p class="gl">毎月同じ場所で開き、「あそこに行けば誰かいる」を作る。</p>
+    </div>
+    <div class="tl-col" style="color:var(--gold)">
+      <span class="dot"></span>
+      <p class="yr">2028年度</p>
+      <p class="nm">第2期・展開</p>
+      <p class="gl">地区へ持ち出し、世話人と一緒に回す。</p>
+    </div>
+    <div class="tl-col" style="color:var(--cafe)">
+      <span class="dot"></span>
+      <p class="yr">2029年度 —</p>
+      <p class="nm">第3期・住民の手に</p>
+      <p class="gl">社協は後ろに下がり、支える側に回る。</p>
+    </div>
+  </div>
+
+  <div class="tl-key">
+    <span style="color:var(--green)"><i></i>社協が回す</span>
+    <span style="color:var(--gold)"><i></i>社協と住民で回す</span>
+    <span style="color:var(--cafe)"><i></i>住民が回す</span>
+  </div>
+
+  <!-- 準備期 -->
+  <article class="phase">
+    <div class="phase-top">
+      <div class="phase-no" style="background:var(--green-bg);color:var(--green)">準備<br>期</div>
+      <div class="phase-titles">
+        <div class="chips"><span class="chip">2026年10月〜2027年3月</span><span class="chip">令和8年度 後半</span><span class="chip">試行3回</span></div>
+        <h3 class="phase-name">まず、3回だけ開いてみる</h3>
+        <p class="phase-catch">やるかどうかを会議で決めきらない。開いてみて決める。</p>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-main">
+        <div class="block ask" style="color:var(--green)">
+          <h4>この期の問い</h4>
+          <p>そもそも、人は来るのか。来た人は「また来たい」と思うか。</p>
+        </div>
+        <div class="block">
+          <h4>やること</h4>
+          <ul>
+            <li>企画決裁・予算措置（次年度当初予算への計上もここで）</li>
+            <li>会場と曜日を決める（毎回同じ場所・同じ曜日にする）</li>
+            <li><strong>試行3回</strong>（10月・12月・2月）を開催</li>
+            <li>最初の声かけは名簿でなく直接。<strong>ボランティア入門講座の修了者、サロン参加者、登録ボランティア</strong>へ職員から電話・手渡しで</li>
+            <li>進行台本と記録様式（参加者カード・開催記録）をつくる</li>
+            <li>毎回終了後に職員2人で15分ふりかえり、次回に1つだけ変える</li>
+            <li>世話人になってくれそうな人を3人見つける</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-side">
+        <div class="block">
+          <h4>到達のめやす</h4>
+          <dl class="goal">
+            <dt>試行の開催</dt><dd>3回</dd>
+            <dt>のべ参加者</dt><dd>30人</dd>
+            <dt>2回以上来た人</dt><dd>8人</dd>
+            <dt>世話人候補</dt><dd>3人</dd>
+            <dt>進行台本</dt><dd>第1版</dd>
+          </dl>
+        </div>
+        <div class="block">
+          <h4>ここで撤退も判断する</h4>
+          <p style="font-size:14px;color:var(--ink-2)">3回とも参加が5人を下回り、再訪もない場合は、形を変えます（既存サロンへの相乗り型へ切り替え）。失敗ではなく、確かめた結果として記録します。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 第1期 -->
+  <article class="phase">
+    <div class="phase-top">
+      <div class="phase-no" style="background:var(--green-bg);color:var(--green)">第1<br>期</div>
+      <div class="phase-titles">
+        <div class="chips"><span class="chip">2027年度</span><span class="chip">令和9年度</span><span class="chip">月1回・年12回</span></div>
+        <h3 class="phase-name">毎月、同じ場所で開く</h3>
+        <p class="phase-catch">「第◯◯曜の午前は、あそこに行けば誰かいる」を町につくる。</p>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-main">
+        <div class="block ask" style="color:var(--green)">
+          <h4>この期の問い</h4>
+          <p>顔見知りは、実際に増えているか。カフェの外でも会っているか。</p>
+        </div>
+        <div class="block">
+          <h4>やること</h4>
+          <ul>
+            <li>月1回・90分の定例開催（日程を年度当初に12回分公表する）</li>
+            <li>参加者カードの運用開始（呼ばれたい名前／地区／できること／出られる時間）</li>
+            <li>毎回15分の話題提供。社協の事業や地区の活動を、担当職員が持ち回りで紹介</li>
+            <li><strong>ボランティア登録・活動見学への導線を、その場で完結させる</strong>（登録用紙とその場で申し込める見学先リストを常備）</li>
+            <li>世話人候補と月1回のふりかえり。少しずつ受付・お茶出し・進行を任せる</li>
+            <li>広報：町広報・回覧・チラシ・QRコード。あわせて口コミ（前回参加者から誘ってもらう）</li>
+            <li>年度末に参加者アンケートと報告書。運営委員会・理事会へ報告</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-side">
+        <div class="block">
+          <h4>到達のめやす</h4>
+          <dl class="goal">
+            <dt>開催</dt><dd>12回</dd>
+            <dt>のべ参加者</dt><dd>120人</dd>
+            <dt>初めて来た人</dt><dd>40人</dd>
+            <dt>3回以上の常連</dt><dd>15人</dd>
+            <dt>登録につながった人</dt><dd>5人</dd>
+            <dt>カフェ外で会った人</dt><dd>10人</dd>
+          </dl>
+        </div>
+        <div class="block">
+          <h4>いちばん大事な数字</h4>
+          <p style="font-size:14px;color:var(--ink-2)">「カフェで知り合った人と、カフェ以外の場所で会った」人の数。参加人数が多くても、この数字が動かないなら、つながりは生まれていません。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 第2期 -->
+  <article class="phase">
+    <div class="phase-top">
+      <div class="phase-no" style="background:var(--gold-bg);color:var(--gold)">第2<br>期</div>
+      <div class="phase-titles">
+        <div class="chips"><span class="chip">2028年度</span><span class="chip">令和10年度</span><span class="chip">地区へ持ち出し</span></div>
+        <h3 class="phase-name">地区へ持ち出し、世話人と回す</h3>
+        <p class="phase-catch">社協の建物まで来られない人のところへ、こちらが出ていく。</p>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-main">
+        <div class="block ask" style="color:var(--gold)">
+          <h4>この期の問い</h4>
+          <p>社協職員が前に立たなくても、その日は回るか。</p>
+        </div>
+        <div class="block">
+          <h4>やること</h4>
+          <ul>
+            <li>本所での定例（月1回）に加え、<strong>地区の公民館・集会所を持ち回りで年8回</strong></li>
+            <li>テーマ回を年4回。既存プログラムと接続する（防災ビンゴ／認知症サポーター／サバメシ／除雪・見守り）</li>
+            <li><strong>世話人チームを結成（5人）</strong>。役割を決める（受付・お茶・進行・記録・声かけ）</li>
+            <li>進行を段階的に移す。職員は同席するが、前には立たない回を増やす</li>
+            <li>地区社協・民生委員児童委員・地域包括支援センターと開催情報を共有し、気になる人へ声をかけてもらう</li>
+            <li>カフェから生まれた住民の活動を2つ、事業として支える（例：買い物同行、庭木の手入れ、こども食堂の手伝い）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-side">
+        <div class="block">
+          <h4>到達のめやす</h4>
+          <dl class="goal">
+            <dt>開催</dt><dd>20回</dd>
+            <dt>開催した地区</dt><dd>4地区</dd>
+            <dt>のべ参加者</dt><dd>250人</dd>
+            <dt>世話人</dt><dd>5人</dd>
+            <dt>世話人が進行した回</dt><dd>8回</dd>
+            <dt>カフェ発の活動</dt><dd>2件</dd>
+          </dl>
+        </div>
+        <div class="block">
+          <h4>職員の関わり方</h4>
+          <p style="font-size:14px;color:var(--ink-2)">この期から、職員の仕事は「進行」から「段取りと後方支援」へ移ります。当日いちばん話しているのが職員なら、まだ移譲できていません。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 第3期 -->
+  <article class="phase">
+    <div class="phase-top">
+      <div class="phase-no" style="background:var(--cafe-bg);color:var(--cafe)">第3<br>期</div>
+      <div class="phase-titles">
+        <div class="chips"><span class="chip">2029年度〜</span><span class="chip">令和11年度〜</span><span class="chip">住民主体</span></div>
+        <h3 class="phase-name">社協は、後ろに下がる</h3>
+        <p class="phase-catch">私たちがいなくなっても続く形にして、はじめて成功。</p>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-main">
+        <div class="block ask" style="color:var(--cafe)">
+          <h4>この期の問い</h4>
+          <p>担当職員が代わっても、私たちが抜けても、この場は続くか。</p>
+        </div>
+        <div class="block">
+          <h4>やること</h4>
+          <ul>
+            <li>世話人チームが企画・進行・記録を担う。社協は<strong>会場・保険・広報・相談のつなぎ先</strong>として支える</li>
+            <li>地区3か所で常設化（曜日と場所を固定し、地区で運営）</li>
+            <li>新しい世話人が入り、育つ仕組みをつくる（世話人体験の日を年2回）</li>
+            <li>年1回、全地区の合同交流会。ここで顔ぶれをつなぎ直す</li>
+            <li>3年間の記録をまとめ、地域福祉活動計画の次期改定へ反映する</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-side">
+        <div class="block">
+          <h4>到達のめやす</h4>
+          <dl class="goal">
+            <dt>住民主体で開いた回</dt><dd>8割以上</dd>
+            <dt>常設の場</dt><dd>3か所</dd>
+            <dt>社協の直接関与</dt><dd>年4回</dd>
+            <dt>新しい世話人</dt><dd>2人／年</dd>
+          </dl>
+        </div>
+        <div class="block">
+          <h4>手放しても切れないもの</h4>
+          <p style="font-size:14px;color:var(--ink-2)">相談ごとを専門機関へつなぐ道すじだけは、社協が持ち続けます。世話人に相談対応の責任を負わせません。</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ======================== 当日の型 ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">当日の型</span>
+    <h2>90分の、いつも同じ流れ</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">毎回ちがう催しにしません。<strong>流れが同じだから、はじめての人も安心して入れます</strong>。変えるのは「きょうの話題」だけです。</p>
+
+  <div class="flow">
+    <div class="step">
+      <div class="when">0:00 —</div>
+      <div>
+        <h3>受付・名札</h3>
+        <p>参加者カードに、呼ばれたい名前を書いてもらいます。「山田さん」ではなく「よしこさん」と呼び合える場にするためです。2回目からは名札を渡すだけ。</p>
+        <div class="todo">はじめての方には、世話人がひとりつきます</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="when">0:10 —</div>
+      <div>
+        <h3>ひとこと自己紹介</h3>
+        <p>名前と、お題ひとつ（「最近うれしかったこと」「得意な家事」など）。長く話さなくていい、というルールを最初に伝えます。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="when">0:25 —</div>
+      <div>
+        <h3>きょうの話題（15分）</h3>
+        <p>社協職員か活動者から、町でいま動いている活動をひとつ紹介します。配食、見守り、サロン、除雪、災害ボランティアセンター。写真を見せながら、短く。</p>
+        <div class="todo">ここが「知る」から「やってみる」への橋渡しになります</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="when">0:45 —</div>
+      <div>
+        <h3>お茶とおしゃべり</h3>
+        <p>4人ずつのテーブルで自由に。ここが本体です。職員は進行せず、話に入らずに、様子を見て記録します。席は毎回替えます。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="when">1:15 —</div>
+      <div>
+        <h3>おしらせと、次の一歩</h3>
+        <p>次回の日程、町の行事、募集中の活動。希望者はその場でボランティア登録、または活動先の見学を申し込めます。用紙は毎回持参します。</p>
+        <div class="todo">「やってみたいこと」「出られる曜日」を書いて帰ってもらう</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="when">1:30</div>
+      <div>
+        <h3>おわり／職員15分ふりかえり</h3>
+        <p>参加者数、初参加、出た話題、気になった人、つないだ先を開催記録に残します。そして<strong>次回に変えることを1つだけ</strong>決めます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 指標 ======================== -->
+<section>
+  <div class="sec-head">
+    <span class="sec-eyebrow">評価</span>
+    <h2>つながりを、どう測るか</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">参加人数だけを追うと、この事業は必ず失敗します。人は集まったがつながりは生まれなかった、という状態が見えなくなるからです。<strong>「出会い」「関係」「動き」の3つの層</strong>で見ます。</p>
+
+  <div class="tbl-scroll">
+    <table class="tbl">
+      <caption>第1期（2027年度）の目標値。準備期の実績が出たら、必ず見直してください。</caption>
+      <thead>
+        <tr><th>層</th><th>見るもの</th><th>どう取るか</th><th>第1期の目標</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="layer">出会い</td>
+          <td>のべ参加者数／はじめて来た人／参加者の住む地区の広がり</td>
+          <td>受付の参加者カードと開催記録</td>
+          <td>のべ120人／初参加40人／5地区</td>
+        </tr>
+        <tr>
+          <td class="layer">関係</td>
+          <td>2回以上来た人の割合／「名前で呼べる人が増えた」と答えた人／参加者どうしで始まった連絡・訪問</td>
+          <td>参加者カードの通し番号と、年2回のひとこと調査</td>
+          <td>再訪4割／「増えた」8割／10件</td>
+        </tr>
+        <tr>
+          <td class="layer">動き</td>
+          <td>ボランティア登録・活動につながった人／カフェから生まれた活動／専門機関へつないだ件数</td>
+          <td>登録簿、開催記録</td>
+          <td>登録5人／活動は第2期から／つなぎは件数の記録のみ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="vision" style="margin-top:26px;border-color:var(--green);padding:26px 28px 24px">
+    <p class="v-label" style="color:var(--green)">いちばん大事な、ひとつの数字</p>
+    <p class="v-main" style="font-size:clamp(19px,3vw,27px)">カフェで知り合った人と、<br><em>カフェ以外の場所で会った</em>人の数。</p>
+    <p class="v-body" style="margin-top:16px">道で立ち話をした、家を訪ねた、一緒に買い物に行った。これが動きはじめたとき、つながりは私たちの事業の外へ出て、その人の暮らしの中に入ったことになります。孤立・孤独に効いているかどうかは、この数字だけが教えてくれます。年2回、ひとこと調査で聞き取ります。</p>
+  </div>
+</section>
+
+<!-- ======================== 体制と予算 ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">体制</span>
+    <h2>だれが、どう関わるか</h2>
+  </div>
+  <hr class="rule">
+
+  <div class="tbl-scroll">
+    <table class="tbl">
+      <thead>
+        <tr><th>だれが</th><th>役割</th><th>第3期での役割</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="layer">社協・担当職員2名</td><td>企画、段取り、当日の進行と記録、ふりかえり</td><td>会場・保険・広報の裏方、相談のつなぎ先</td></tr>
+        <tr><td class="layer">住民の世話人</td><td>受付、お茶、はじめての人への声かけ（第2期から進行も）</td><td>企画・進行・記録の担い手</td></tr>
+        <tr><td class="layer">ボランティアセンター運営委員会</td><td>年2回の報告を受け、方向を確認する</td><td>同じ</td></tr>
+        <tr><td class="layer">地域包括支援センター<br>民生委員児童委員協議会<br>地区社協</td><td>開催情報の共有、気になる方への声かけ、相談の受け皿</td><td>同じ（つながりはより太く）</td></tr>
+        <tr><td class="layer">町（担当課）</td><td>広報掲載、会場、計画上の位置づけ</td><td>同じ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-head" style="margin-top:44px">
+    <span class="sec-eyebrow">予算</span>
+    <h2>お金のめやす</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">第1期（年12回・1回20人想定）の概算です。実際の単価と、既存事業で持てる分を差し引いて積み直してください。参加費は<strong>1回100円（お茶代の実費）</strong>を提案します。無料にもできますが、少額でも出してもらうほうが「お客さん」でなく「一員」になりやすいためです。事情のある方は免除します。</p>
+
+  <div class="tbl-scroll">
+    <table class="tbl">
+      <caption>第1期（2027年度）年間・概算</caption>
+      <thead>
+        <tr><th>費目</th><th>内訳</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>茶菓・飲み物</td><td>100円 × 20人 × 12回</td><td class="num">24,000円</td></tr>
+        <tr><td>消耗品</td><td>名札、模造紙、文具、紙コップなど</td><td class="num">15,000円</td></tr>
+        <tr><td>印刷</td><td>チラシ、参加者カード、記録様式</td><td class="num">20,000円</td></tr>
+        <tr><td>話題提供の謝礼</td><td>5,000円 × 4回（外部の方に頼む回）</td><td class="num">20,000円</td></tr>
+        <tr><td>ボランティア活動保険</td><td>既存の加入分で対応</td><td class="num">—</td></tr>
+        <tr class="total"><td>合計</td><td>参加費収入（100円×のべ120人）＝ 12,000円を充当</td><td class="num">約 79,000円</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">準備期（試行3回）は約20,000円。第2期は地区開催の会場使用料・移動費を加え、約120,000円を見込みます。次年度当初予算の要求時期に合わせて、11月までに数字を固めてください。</p>
+</section>
+
+<!-- ======================== つまずき ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">先に決めておくこと</span>
+    <h2>つまずきそうなところと、打ち手</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">同じような場は、全国の社協で始まっては消えています。消える理由はだいたい決まっているので、先に手を打っておきます。</p>
+
+  <div class="risks">
+    <div class="risk">
+      <h3>人が集まらない</h3>
+      <p>チラシと回覧だけでは、はじめの数回は人が来ません。<span class="fix">最初の3回は、講座の修了者・サロン参加者・登録ボランティアへ職員が直接声をかけます。</span>広報は、場ができてから効きはじめます。</p>
+    </div>
+    <div class="risk">
+      <h3>常連だけの場になる</h3>
+      <p>半年もすると、輪ができて新しい人が入れなくなります。<span class="fix">席は毎回替える。世話人のうち1人は「はじめての人につく」役を持つ。半年ごとにテーマ回を入れて、入口を作り直します。</span></p>
+    </div>
+    <div class="risk">
+      <h3>重い相談ごとが持ち込まれる</h3>
+      <p>つながりの場には、必ず困りごとが出てきます。<span class="fix">その場で解決しようとしない。聞いて、後日あらためて社協が受ける。包括支援センター・行政へのつなぎ方を事前に決めておきます。</span>世話人に相談対応の責任は負わせません。</p>
+    </div>
+    <div class="risk">
+      <h3>担当が代わると消える</h3>
+      <p>人に付いた事業は、異動でなくなります。<span class="fix">進行台本、記録様式、年間日程、声かけ先の一覧を文書で残す。</span>人ではなく仕組みに乗せます。</p>
+    </div>
+    <div class="risk">
+      <h3>「ボランティア」の看板が重い</h3>
+      <p>この名前だけで「自分には関係ない」と思われます。<span class="fix">案内には「申込も登録もいりません」「お茶を飲みに来るだけでかまいません」と、いちばん大きく書きます。</span></p>
+    </div>
+    <div class="risk">
+      <h3>個人情報の扱い</h3>
+      <p>参加者カードには住所・連絡先が入ります。<span class="fix">社協で施錠保管し、名簿は配らない。写真撮影は毎回その場で確認する。世話人には守秘を書面で説明します。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 直近3か月 ======================== -->
+<section>
+  <div class="sec-head">
+    <span class="sec-eyebrow">まず、ここから</span>
+    <h2>これからの3か月でやること</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">ロードマップは4年ですが、動かすのは今月です。ここが埋まれば、あとは回りはじめます。</p>
+
+  <div class="todos">
+    <div class="todo-row">
+      <span class="mo">9月 上旬</span>
+      <p><span class="k">企画書を出す。</span>この資料をもとに、事務局長・運営委員会へ。あわせて町の担当課へ一報を入れる</p>
+      <span class="wh">担当職員</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">9月 中旬</span>
+      <p><span class="k">会場と曜日を仮押さえ。</span>毎回同じ場所・同じ曜日にできるところを選ぶ（駐車場と、歩いて来られるかを優先）</p>
+      <span class="wh">担当職員</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">9月 下旬</span>
+      <p><span class="k">試行3回の日程を確定し、道具をつくる。</span>進行台本、参加者カード、開催記録の様式、案内チラシ</p>
+      <span class="wh">担当職員2名</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">10月 上旬</span>
+      <p><span class="k">声をかける。</span>入門講座の修了者、サロン参加者、登録ボランティアへ、電話と手渡しで。まず20人に</p>
+      <span class="wh">担当＋地区担当</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">10月</span>
+      <p><span class="k">第1回を開く。</span>終了後15分でふりかえり、次回に変えることを1つだけ決める</p>
+      <span class="wh">全員</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">11月</span>
+      <p><span class="k">次年度予算へ計上。</span>試行1回分の実績をもって、第1期（年12回）の予算を要求する</p>
+      <span class="wh">担当＋事務局</span>
+    </div>
+    <div class="todo-row">
+      <span class="mo">12月</span>
+      <p><span class="k">第2回を開く。</span>あわせて、世話人になってくれそうな方に声をかけはじめる</p>
+      <span class="wh">全員</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 住民向け ======================== -->
+<section class="pg">
+  <div class="sec-head">
+    <span class="sec-eyebrow">住民のみなさんへ</span>
+    <h2>そのまま、ご案内に使えます</h2>
+  </div>
+  <hr class="rule">
+  <p class="sec-note">下の1枚は、チラシ・回覧・町広報の原稿としてそのまま使える文面です。<span style="color:var(--cafe);font-weight:700">◯で囲んだところ</span>は、日程が決まったら入れてください。</p>
+
+  <div class="poster">
+    <p class="p-eyebrow">大郷町社会福祉協議会　ボランティアセンター</p>
+    <h2>ボランティアカフェ、はじめます。</h2>
+    <p class="p-lead">お茶を飲みに来るだけで、かまいません。<br>申込も、登録も、いりません。</p>
+
+    <p class="p-body">「なにか役に立つことをしたいけれど、何から始めればいいか分からない」。「引っ越してきたけれど、知り合いがいない」。「今やっている活動の話を、誰かとしたい」。そんな方が、月に一度、お茶を飲みながら集まる場所です。町でどんな活動があるのか、短くご紹介する時間もあります。話さずに聞いているだけでも、途中で帰っても、かまいません。</p>
+
+    <ul>
+      <li>とき　毎月 第◯◯曜日　午前10時00分 〜 11時30分</li>
+      <li>ところ　◯◯◯◯◯◯◯◯（駐車場あります）</li>
+      <li>参加費　100円（お茶とお菓子代）</li>
+      <li>持ちもの　とくにありません</li>
+      <li>どなたでも　町内にお住まいの方なら、年齢も経験も問いません</li>
+    </ul>
+
+    <p class="p-body" style="margin-top:22px">私たちは、困ったときに「あの人に聞いてみよう」と思い浮かぶ人が、ひとりでも多くいる町をめざしています。そのつながりは、困ってからでは間に合いません。なんでもない日に、お茶を一緒に飲んだ相手だからこそ、いざというとき声をかけられます。まずは、ふらっと寄ってみてください。</p>
+
+    <div class="p-foot">
+      <span class="org">社会福祉法人 大郷町社会福祉協議会　ボランティアセンター</span>
+      <span class="tel-label">TEL</span><span class="tel">022-359-2753</span>　FAX 022-359-4896<br>
+      メール community@oosato-syakyo.or.jp<br>
+      住所 宮城県黒川郡大郷町粕川字東長崎31-7<br>
+      受付時間 平日 8:30〜17:15（土日祝・年末年始を除く）
+    </div>
+  </div>
+
+  <p class="footnote">
+    「ボランティアカフェ」構想と行程（ロードマップ）　第1版<br>
+    大郷町社会福祉協議会　ボランティアセンター事業　2026年9月<br>
+    ※ 時期・数値・金額はすべて検討用のたたき台です。決裁と予算編成の過程で調整してください。
+  </p>
+</section>
+
+</div>
