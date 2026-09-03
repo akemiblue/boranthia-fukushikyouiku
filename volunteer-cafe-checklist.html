@@ -66,7 +66,7 @@ h1{font-size:clamp(28px,4.8vw,44px);font-weight:900;margin:12px 0 0}
 .slate div{padding:14px 18px;border-right:1px solid var(--line)}
 .slate div:last-child{border-right:0}
 .slate dt{font-size:11px;letter-spacing:.16em;color:var(--ink-3);font-weight:700;margin:0}
-.slate dd{margin:10px 0 0;font-size:15px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif;border-bottom:1.5px dotted var(--line);padding-bottom:4px;min-height:1.9em;color:var(--ink-3)}
+.slate dd{margin:10px 0 0;font-size:15px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif;border-bottom:1.5px dotted var(--line);padding-bottom:4px;min-height:1.9em;color:var(--ink)}
 @media (max-width:640px){.slate div{border-right:0;border-bottom:1px solid var(--line)}}
 
 /* ---- 進み具合バー ---- */
@@ -84,7 +84,7 @@ h1{font-size:clamp(28px,4.8vw,44px);font-weight:900;margin:12px 0 0}
 /* ---- 逆算スケジュール ---- */
 .sched{margin-top:14px;border-top:1.5px solid var(--ink)}
 .sched-row{display:grid;grid-template-columns:6.5em 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.sched-row .w{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--cafe);font-variant-numeric:tabular-nums}
+.sched-row .w{line-height:1.5;font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--cafe);font-variant-numeric:tabular-nums}
 .sched-row p{font-size:14.5px}
 .sched-row p strong{font-weight:700}
 @media (max-width:600px){.sched-row{grid-template-columns:1fr;gap:2px}}
@@ -162,13 +162,13 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
 <header class="head">
   <span class="crest">大郷町社会福祉協議会　ボランティアセンター事業</span>
   <h1>ボランティアカフェ<br>開催準備リスト</h1>
-  <p class="lede">第1回（試行）に向けて、開催日から逆算した「やらなければいけないこと」の一覧です。盆栽ボランティアと災害ボランティアセンター運営体験を、当日のプログラムに入れる想定で組んでいます。</p>
+  <p class="lede">第1回（試行）に向けて、開催日から逆算した「やらなければいけないこと」の一覧です。10:00〜11:00に講座（ボランティアとは／災害ボランティアセンターの運営）、11:00〜12:00に自由見学。盆栽ボランティアは自由見学のコーナーに置く想定で組んでいます。予算は50,000円です。</p>
 
   <dl class="slate">
-    <div><dt>開催日</dt><dd>　　年　　月　　日（　）</dd></div>
-    <div><dt>時間</dt><dd>　　:　　 〜 　　:　　</dd></div>
-    <div><dt>会場</dt><dd>　</dd></div>
-    <div><dt>担当</dt><dd>　</dd></div>
+    <div><dt>開催日</dt><dd>2026年12月15日（火）</dd></div>
+    <div><dt>時間</dt><dd>9:30 〜 12:00（9:00開場）</dd></div>
+    <div><dt>会場</dt><dd>粕川地区防災コミュニティセンター</dd></div>
+    <div><dt>前日準備</dt><dd>12月14日（月）15:00 〜</dd></div>
   </dl>
 
   <div class="bar">
@@ -189,17 +189,17 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
   <p class="note" style="margin-top:0">開催日を決めたら、この表の「◯週前」を実際の日付に置き換えてください。<strong>いちばん動かせないのは、町広報の原稿締切と、回覧が回りきるまでの日数</strong>です。ここから逆算して開催日を決めるほうが、うまくいきます。</p>
 
   <div class="sched">
-    <div class="sched-row"><span class="w">8週前</span><p><strong>会場を押さえる。</strong>町広報の掲載締切を確認する。開催伺いの決裁を出す</p></div>
-    <div class="sched-row"><span class="w">7週前</span><p>会場の使用申請。チラシの原稿づくり。<strong>盆栽の講師にお願いする</strong></p></div>
-    <div class="sched-row"><span class="w">6週前</span><p>参加記念品を決める。盆栽の内容と材料の数量を決める。予算の執行伺い</p></div>
-    <div class="sched-row"><span class="w">5週前</span><p><strong>チラシ印刷。</strong>災ボラ体験の資料を確認し、縮小版の構成を決める。記念品の発注</p></div>
-    <div class="sched-row"><span class="w">4週前</span><p>回覧を依頼（回りきるのに2〜3週かかります）。盆栽の材料を発注。カフェ備品の買い出し</p></div>
-    <div class="sched-row"><span class="w">3週前</span><p><strong>直接声かけを始める（まず20人）。</strong>掲示を各所へ。表示物・掲示物を作る</p></div>
-    <div class="sched-row"><span class="w">2週前</span><p>役割分担と進行台本。レイアウト図。記念品の袋詰め。持ち帰り資料の印刷</p></div>
-    <div class="sched-row"><span class="w">1週前</span><p><strong>動線のリハーサル（30分）。</strong>材料と備品の最終確認。参加見込み数を固める</p></div>
-    <div class="sched-row"><span class="w">前日</span><p>積み込み。声をかけた方へリマインドの電話。鍵と解錠時刻の確認</p></div>
-    <div class="sched-row"><span class="w">当日</span><p>開場90分前に集合。設営・掲示・給湯・受付準備。終了後15分でふりかえり</p></div>
-    <div class="sched-row"><span class="w">事後</span><p>お礼（3日以内）、開催記録（当日中）、精算（1週間以内）、報告（2週間以内）</p></div>
+    <div class="sched-row"><span class="w">8週前<br>10/20</span><p><strong>会場を押さえる。</strong>町広報の掲載締切を確認する。開催伺いの決裁を出す</p></div>
+    <div class="sched-row"><span class="w">7週前<br>10/27</span><p>会場の使用申請。チラシの原稿づくり。<strong>盆栽の講師にお願いする</strong></p></div>
+    <div class="sched-row"><span class="w">6週前<br>11/3</span><p>参加記念品を決める。盆栽の内容と材料の数量を決める。予算の執行伺い</p></div>
+    <div class="sched-row"><span class="w">5週前<br>11/10</span><p><strong>チラシ印刷。</strong>災ボラ体験の資料を確認し、縮小版の構成を決める。記念品の発注</p></div>
+    <div class="sched-row"><span class="w">4週前<br>11/17</span><p>回覧を依頼（回りきるのに2〜3週かかります）。盆栽の材料を発注。カフェ備品の買い出し</p></div>
+    <div class="sched-row"><span class="w">3週前<br>11/24</span><p><strong>直接声かけを始める（まず20人）。</strong>掲示を各所へ。表示物・掲示物を作る</p></div>
+    <div class="sched-row"><span class="w">2週前<br>12/1</span><p>役割分担と進行台本。レイアウト図。記念品の袋詰め。持ち帰り資料の印刷</p></div>
+    <div class="sched-row"><span class="w">1週前<br>12/8</span><p><strong>動線のリハーサル（30分）。</strong>材料と備品の最終確認。参加見込み数を固める</p></div>
+    <div class="sched-row"><span class="w">前日<br>12/14</span><p>積み込み。声をかけた方へリマインドの電話。鍵と解錠時刻の確認</p></div>
+    <div class="sched-row"><span class="w">当日<br>12/15</span><p>開場90分前に集合。設営・掲示・給湯・受付準備。終了後15分でふりかえり</p></div>
+    <div class="sched-row"><span class="w">事後<br>12/18〜</span><p>お礼（3日以内）、開催記録（当日中）、精算（1週間以内）、報告（2週間以内）</p></div>
   </div>
 
   <div class="warn">
@@ -230,6 +230,8 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">設備を確認する<em>電源の位置と数／暖房／給湯室／机といすの数／ゴミは持ち帰りか／掲示物を壁に貼ってよいか</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">鍵の受け取り方、解錠の時刻、当日の連絡先を確認する</span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">レイアウト図をつくる<em>受付／テーブル4つ／盆栽コーナー／災ボラ体験コーナー／給湯・ゴミ／記念品の置き場</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">前日12月14日（月）15:00から会場に入れるか確認する<em>粕川地区防災コミュニティセンター。前日準備の時間帯に使用申請が要るかも確認</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">当日は9:00開場のため、8:30に鍵を開けられるか確認する<em>職員集合は8:30。鍵の受け取り方と、当日の連絡先もあわせて</em></span><span class="who"></span></label>
     </div>
   </div>
 
@@ -247,6 +249,8 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">写真撮影の同意の取り方を決める<em>受付での口頭確認と、会場の掲示。写りたくない方の名札に印をつける方法まで</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">食物アレルギーの対応を決める<em>お菓子は個包装で、表示のあるものを。空袋を当日まで残しておく</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">前日</span><span class="txt">会場使用料の支払い、釣り銭の準備<em>参加費100円のため、100円玉と500円玉を用意。出納の記録用紙も</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">予算50,000円の配分を決める<em>記念品・盆栽材料・茶菓の3つで大半が決まります。エクセルの「予算50,000円」シートに配分案があります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">参加費を取るかどうか決める<em>予算50,000円で足りるなら無料に。取る場合は釣り銭と出納の準備が要ります</em></span><span class="who"></span></label>
     </div>
   </div>
 </section>
@@ -349,6 +353,7 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">次回のご案内（日付を大きく1枚）<em>帰りぎわに必ず目に入る位置へ</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">ボランティア登録・活動見学のご案内<em>用紙を横に置いておく。その場で書いて帰れるように</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">町でいま動いている活動の紹介パネル<em>配食・見守り・サロン・除雪。写真を貼るだけでよい</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">4週前</span><span class="txt">自由見学（11:00〜12:00）のコーナー構成を決める<em>案：災ボラの資機材展示／マッチング体験／町の活動紹介パネル／盆栽コーナー／お茶と相談。何を何か所置くかを先に決める</em></span><span class="who"></span></label>
     </div>
   </div>
 
@@ -373,6 +378,7 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">「育て方」の1枚をつくって印刷する<em>水やり／置き場所／冬の越し方／困ったときの連絡先。持ち帰ったあとも社協とつながる紙になります</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">けがへの備えを確認する<em>はさみを使います。保険の対象になるか、応急手当の担当は誰か</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">「この続きをやりたい人」の名簿をその場でつくる<em>庭木・鉢の手入れを手伝う活動へ。教えてくれた方にも、世話人として関わってもらえるか声をかける</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">6週前</span><span class="txt">盆栽を当日どこに入れるか決める<em>自由見学（11:00〜12:00）のコーナーに置くのが自然。作業に30分以上かかる内容なら、別の日に回す判断も</em></span><span class="who"></span></label>
     </div>
   </div>
 
@@ -395,6 +401,9 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">ボランティア活動保険の説明資料と加入用紙を用意する</span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">進行台本をつくる<em>誰がどの役をやり、何を言うか。参加者が少なかった場合の縮め方も書いておく</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">ふりかえりの問いを決めておく<em>「やってみて、いちばん難しかったのはどこですか」。ここで平時のつながりの話につなげます</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">講座（10:00〜11:00）の構成を決める<em>前半「ボランティアとは」＋後半「災害ボランティアセンターの運営」。60分をどう割るかを先に決める</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">5週前</span><span class="txt">講座で話す人を決める<em>職員が話すか、外部にお願いするか。外部なら謝礼と依頼文が要ります</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">3週前</span><span class="txt">講座の資料・スライドをつくる<em>配布資料は文字を大きく。60分は長いので、途中に手を動かす時間か問いかけを入れる</em></span><span class="who"></span></label>
     </div>
   </div>
 </section>
@@ -424,6 +433,8 @@ h2{font-size:clamp(21px,3.2vw,27px);font-weight:900}
       <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">記録をとる<em>参加者数／はじめて来た人／出た話題／気になった方／つないだ先／写真</em></span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">「やってみたいこと」「出られる曜日」を書いて帰ってもらう</span><span class="who"></span></label>
       <label class="item"><input type="checkbox"><span class="due">当日</span><span class="txt">終了後15分でふりかえり。<strong>次回に変えることを1つだけ決める</strong><em>その場で決めないと、次回まで持ち越されて忘れます</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">前日準備（12/14 15:00〜）の段取りと担当を決める<em>会場設営、机いすの配置、掲示、資機材の搬入、盆栽コーナーの下ごしらえ、給湯の確認</em></span><span class="who"></span></label>
+      <label class="item"><input type="checkbox"><span class="due">2週前</span><span class="txt">9:30〜10:00の進め方を決める<em>受付・お茶・あいさつ・本日の流れ・ひとこと自己紹介。ここで場があたたまるかが、その後を左右します</em></span><span class="who"></span></label>
     </div>
   </div>
 
