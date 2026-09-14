@@ -1,0 +1,435 @@
+<title>ボランティアカフェ チラシ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+<style>
+/* ============================================================
+   大郷町社会福祉協議会 ボランティアセンター事業
+   ボランティアカフェ（第1回）チラシ　A4縦・1枚
+   ＋ 回覧・町広報・SNS用の原稿（画面のみ／印刷されません）
+   ============================================================ */
+:root{
+  --paper:#F5F7F1; --card:#FFFFFF;
+  --ink:#22302A; --ink-2:#5A6A61; --ink-3:#86958C;
+  --line:#D9E0D4; --line-2:#EBEFE7;
+  --green:#2E7D5B; --green-bg:#E6F1EA;
+  --gold:#8A6D0B; --gold-bg:#F7EFD7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141A16; --card:#1C231E;
+    --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+    --line:#33403A; --line-2:#2A342E;
+    --green:#77C9A0; --green-bg:#1E3229;
+    --gold:#E0B84F; --gold-bg:#332A15;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141A16; --card:#1C231E;
+  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+  --line:#33403A; --line-2:#2A342E;
+  --green:#77C9A0; --green-bg:#1E3229;
+  --gold:#E0B84F; --gold-bg:#332A15;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink); margin:0;
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:16px; line-height:1.95; -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:760px;margin:0 auto;padding:40px 24px 0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.maru{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif}
+
+/* ── 見出し ───────────────────────────── */
+.eyebrow{
+  display:inline-block;background:var(--green);color:#fff;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;
+  padding:5px 14px;border-radius:999px;
+}
+.cup{display:block;margin:14px auto 0}
+h1{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  font-weight:900;font-size:clamp(30px,6.6vw,50px);text-align:center;
+  margin:10px 0 0;letter-spacing:.04em;line-height:1.4;color:var(--green);
+}
+.lead{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  text-align:center;font-size:clamp(16px,2.8vw,21px);line-height:1.75;
+  margin-top:16px;letter-spacing:.02em;
+}
+.lead .sub{display:block;font-size:.76em;color:var(--ink-2);font-weight:500;margin-top:8px}
+.head{text-align:center}
+
+/* ── 本文 ─────────────────────────────── */
+.body-text{
+  margin-top:26px;font-size:15.5px;line-height:2.05;color:var(--ink);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:22px 2px;
+}
+.body-text .q{color:var(--green);font-weight:700}
+
+/* ── とき・ところ ─────────────────────── */
+.info{
+  margin-top:24px;border:2.5px solid var(--ink);background:var(--card);
+  padding:22px 24px;
+}
+dl.info-list{margin:0;display:grid;grid-template-columns:5.5em 1fr;gap:0}
+dl.info-list dt{
+  font-weight:700;font-size:14px;color:var(--ink-2);
+  padding:9px 10px 9px 0;border-top:1px solid var(--line-2);
+}
+dl.info-list dd{
+  margin:0;padding:9px 0;border-top:1px solid var(--line-2);
+  font-size:16px;font-weight:500;
+}
+dl.info-list dt:first-of-type,dl.info-list dd:first-of-type{border-top:0;padding-top:0}
+dl.info-list dd .big{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;
+  font-size:clamp(19px,3.4vw,24px);color:var(--green);line-height:1.5;
+  font-variant-numeric:tabular-nums;display:block;
+}
+dl.info-list dd .note{display:block;font-size:13.5px;color:var(--ink-2);margin-top:3px;line-height:1.8}
+dl.info-list dd .paren{font-size:13.5px;color:var(--ink-2);margin-left:2px}
+dl.info-list dd .free{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:19px;color:var(--green);
+}
+@media (max-width:520px){
+  dl.info-list{grid-template-columns:1fr}
+  dl.info-list dt{padding-bottom:0}
+  dl.info-list dd{border-top:0;padding-top:2px}
+  dl.info-list dd:first-of-type{padding-top:2px}
+}
+
+.info-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 24px;
+  margin-top:4px;border-top:1px solid var(--line-2);
+}
+.info-grid .ig{padding:10px 0 0}
+.info-grid .k{font-size:13.5px;font-weight:700;color:var(--ink-2);display:block}
+.info-grid .v{font-size:15.5px;font-weight:500;display:block;margin-top:1px}
+.info-grid .v.free{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:18px;color:var(--green)}
+.info-grid .note{display:block;font-size:13px;color:var(--ink-2);line-height:1.75;margin-top:3px}
+@media (max-width:520px){.info-grid{grid-template-columns:1fr;gap:0}}
+
+/* ── 当日やること ─────────────────────── */
+.doing{margin-top:26px}
+.doing-h{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:17px;
+  text-align:center;letter-spacing:.04em;
+}
+.doing-h .s{font-size:13px;color:var(--ink-2);font-weight:500;letter-spacing:.06em;margin-left:.8em}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.card{
+  background:var(--green-bg);border-radius:10px;padding:16px 14px 18px;text-align:center;
+}
+.card .n{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:14px;
+}
+.card .t{
+  display:block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+  font-size:15.5px;margin-top:8px;line-height:1.6;
+}
+.card .d{display:block;font-size:13px;color:var(--ink-2);line-height:1.8;margin-top:6px}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+.gift{
+  margin-top:14px;background:var(--gold-bg);border-radius:10px;
+  padding:12px 18px;font-size:14px;line-height:1.9;text-align:center;color:var(--ink);
+}
+.gift b{font-weight:700}
+
+/* ── 結び ─────────────────────────────── */
+.closing{
+  margin-top:24px;font-size:15px;line-height:2.05;
+  border-left:3px solid var(--green);padding:4px 0 4px 16px;
+}
+
+/* ── 問合せ ───────────────────────────── */
+.contact{border:2px solid var(--ink);background:var(--card);padding:18px 22px;margin-top:26px}
+.contact .lbl{font-size:11.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:700}
+.contact .org{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:16px;display:block;margin-top:5px}
+.contact .body{font-size:14px;color:var(--ink-2);line-height:1.9;margin-top:5px}
+.contact .tel{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:21px;color:var(--green);
+  font-variant-numeric:tabular-nums;vertical-align:-2px}
+.contact .tel-lbl{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ink-3);margin-right:6px}
+
+.footnote{margin-top:16px;font-size:12px;color:var(--ink-3);line-height:1.85}
+
+/* ── 未確定のところ ───────────────────── */
+.tbd{background:var(--gold-bg);color:var(--gold);font-weight:700;padding:0 .35em;border-radius:2px}
+
+/* ── 画面だけの部分（原稿集） ─────────── */
+.only-screen{max-width:760px;margin:60px auto 80px;padding:0 24px}
+.os-h{
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:20px;
+  padding-top:30px;border-top:4px double var(--line);
+}
+.os-note{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.9}
+.draft{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-top:18px}
+.draft h3{
+  font-family:"Zen Maru Gothic",sans-serif;font-size:15px;font-weight:700;margin:0;
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+}
+.draft h3 .cnt{font-size:12px;color:var(--ink-3);font-weight:500;font-variant-numeric:tabular-nums}
+.draft .txt{
+  margin-top:12px;font-size:14.5px;line-height:2;white-space:pre-wrap;
+  background:var(--paper);border-radius:6px;padding:16px 18px;
+}
+.draft .why{font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.85}
+.memo{margin-top:26px;border-left:3px solid var(--gold);background:var(--gold-bg);padding:14px 18px;font-size:13.5px;line-height:1.9;color:var(--ink)}
+.memo b{font-weight:700}
+.memo ol{margin:8px 0 0;padding-left:1.4em}
+.memo li{margin-top:4px}
+
+/* ── 印刷 ─────────────────────────────── */
+@media print{
+  @page{size:A4 portrait;margin:10mm 13mm}
+  :root{
+    --paper:#fff;--card:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;
+    --line:#888;--line-2:#ccc;--green:#1a5c40;--green-bg:#EAF2ED;
+    --gold:#555;--gold-bg:#F4F4F0;
+  }
+  body{font-size:10pt;line-height:1.8}
+  .sheet{max-width:none;padding:0}
+
+  .eyebrow{padding:3px 12px;font-size:8.5pt}
+  .cup{display:none}
+  h1{font-size:23pt;margin-top:6px}
+  .lead{font-size:11.5pt;margin-top:8px;line-height:1.55}
+  .lead .sub{margin-top:4px}
+
+  .body-text{font-size:10pt;line-height:1.75;padding:7px 0;margin-top:9px}
+
+  .info{padding:10px 13px;margin-top:10px;border-width:2pt}
+  dl.info-list{grid-template-columns:5em 1fr}
+  dl.info-list dt{font-size:9.5pt;padding:4px 8px 4px 0}
+  dl.info-list dd{font-size:10.5pt;padding:4px 0}
+  dl.info-list dd .big{font-size:14.5pt;line-height:1.4}
+  dl.info-list dd .free{font-size:12.5pt}
+  dl.info-list dd .note{font-size:9pt;line-height:1.65;margin-top:1px}
+
+  .info-grid{gap:0 18px}
+  .info-grid .ig{padding-top:6px}
+  .info-grid .k{font-size:9.5pt}
+  .info-grid .v{font-size:10.5pt}
+  .info-grid .v.free{font-size:12.5pt}
+  .info-grid .note{font-size:8.8pt;line-height:1.5;margin-top:1px}
+
+  .doing{margin-top:10px}
+  .doing-h{font-size:11.5pt}
+  .doing-h .s{font-size:8.8pt}
+  .cards{gap:6px;margin-top:7px}
+  .card{padding:9px 9px 10px;border-radius:7px}
+  .card .n{width:20px;height:20px;font-size:9.5pt}
+  .card .t{font-size:10pt;margin-top:4px;line-height:1.5}
+  .card .d{font-size:8.3pt;line-height:1.55;margin-top:3px}
+  .gift{margin-top:7px;padding:6px 14px;font-size:9.3pt;border-radius:7px}
+
+  .closing{margin-top:10px;font-size:9.6pt;line-height:1.75;padding-left:11px}
+
+  .contact{margin-top:10px;padding:9px 13px}
+  .contact .org{font-size:11pt;margin-top:3px}
+  .contact .body{font-size:9.3pt;line-height:1.75;margin-top:3px}
+  .contact .tel{font-size:14pt}
+  .footnote{margin-top:8px;font-size:8pt;line-height:1.65}
+
+  .card,.gift,.doing,.closing,.contact,.info{break-inside:avoid}
+  .tbd{background:none;border-bottom:1.5px dotted #666;color:#000}
+  .only-screen,.no-print{display:none}
+}
+</style>
+
+<div class="sheet">
+
+  <div class="head">
+    <span class="eyebrow">大郷町社会福祉協議会　ボランティアセンター</span>
+
+    <svg class="cup" width="72" height="56" viewBox="0 0 72 56" aria-hidden="true" fill="none">
+      <path d="M26 6c0 4-4 4-4 8s4 4 4 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+      <path d="M36 3c0 4.5-4.5 4.5-4.5 9s4.5 4.5 4.5 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+      <path d="M46 6c0 4-4 4-4 8s4 4 4 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+      <path d="M13 29h46v9c0 8.8-7.2 16-16 16H29c-8.8 0-16-7.2-16-16v-9Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M59 33h4a6 6 0 0 1 0 12h-4" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+    </svg>
+
+    <h1>ボランティアカフェ、<br>はじめます。</h1>
+
+    <p class="lead">
+      お茶を飲みに来るだけで、かまいません。
+      <span class="sub">申込も、登録も、いりません。ふらっとお立ち寄りください。</span>
+    </p>
+  </div>
+
+  <p class="body-text">
+    <span class="q">「なにか役に立つことをしたいけれど、何から始めればいいか分からない」。</span>
+    <span class="q">「引っ越してきたけれど、知り合いがいない」。</span>
+    そんな方が、お茶を飲みながら集まる場所です。聞いているだけでも、途中で帰っても、かまいません。
+  </p>
+
+  <div class="info">
+    <dl class="info-list">
+      <dt>とき</dt>
+      <dd>
+        <span class="big">令和8年12月15日（火）午前9時30分 〜 正午12時</span>
+        <span class="note">午前9時開場。途中からでも、途中でお帰りでも大丈夫です。</span>
+      </dd>
+
+      <dt>ところ</dt>
+      <dd>粕川地区防災コミュニティセンター<span class="paren">（駐車場あります）</span></dd>
+
+    </dl>
+
+    <div class="info-grid">
+      <div class="ig">
+        <span class="k">参加費</span>
+        <span class="v free">無料</span>
+        <span class="note">お茶とお菓子をご用意しています。</span>
+      </div>
+      <div class="ig">
+        <span class="k">申込</span>
+        <span class="v">いりません</span>
+        <span class="note">当日、直接お越しください。お決まりの方は<span class="tbd">12月8日（月）</span>までにお電話いただけると、準備の助けになります。</span>
+      </div>
+      <div class="ig">
+        <span class="k">どなたでも</span>
+        <span class="v">町内にお住まいの方</span>
+        <span class="note">年齢も経験も問いません。はじめての方こそ、どうぞ。</span>
+      </div>
+      <div class="ig">
+        <span class="k">持ちもの</span>
+        <span class="v">とくにありません</span>
+        <span class="note">盆栽づくりをされる方は、土を使いますので汚れてもよい服装で。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doing">
+    <p class="doing-h">当日、こんなことをします<span class="s">どれも、見ているだけでかまいません</span></p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="n">1</span>
+        <span class="t">町の活動を知る</span>
+        <span class="d">町でいま動いている活動を、短くご紹介します。</span>
+      </div>
+      <div class="card">
+        <span class="n">2</span>
+        <span class="t">災害ボランティア<br>センターを体験</span>
+        <span class="d">災害のとき町に立ち上がる拠点です。受付から送り出しまでを体験します。</span>
+      </div>
+      <div class="card">
+        <span class="n">3</span>
+        <span class="t">盆栽をつくる</span>
+        <span class="d">町内の方に教わりながら、小さな鉢をひとつ仕立てて持ち帰れます。</span>
+      </div>
+    </div>
+
+    <p class="gift">
+      お帰りに、<b>ささやかな記念品</b>をお渡しします。<span class="tbd">（中身は当日のおたのしみ）</span>
+    </p>
+  </div>
+
+  <p class="closing">
+    困ったときに「あの人に聞いてみよう」と思い浮かぶ人が、ひとりでも多くいる町をめざしています。なんでもない日にお茶を一緒に飲んだ相手だからこそ、いざというとき声をかけられます。
+  </p>
+
+  <div class="contact">
+    <span class="org">社会福祉法人 大郷町社会福祉協議会　ボランティアセンター</span>
+    <p class="body">
+      <span class="tel-lbl">TEL</span><span class="tel">022-359-2753</span>　FAX 022-359-4896　／　大郷町粕川字東長崎31-7<br>
+      メール community@oosato-syakyo.or.jp　受付時間 平日 8:30〜17:15（土日祝・年末年始を除く）
+    </p>
+  </div>
+
+  <p class="footnote">
+    ※ 少雨・降雪にかかわらず行います。警報の発表などで中止する場合は、当日午前7時までにお電話でご連絡します。<br>
+    ※ 会場内で記録用の写真を撮影します。写りたくない方は、受付でお知らせください。
+  </p>
+
+</div>
+
+
+<!-- ===== ここから下は画面だけ。印刷されません ===== -->
+<div class="only-screen">
+
+  <h2 class="os-h">回覧・町広報・SNSの原稿</h2>
+  <p class="os-note">
+    上のチラシと同じ内容を、それぞれの字数に合わせて書き分けたものです。そのままコピーしてお使いください。
+    この部分は印刷されません（チラシだけが1枚で刷られます）。
+  </p>
+
+  <div class="draft">
+    <h3>① 町広報 用<span class="cnt">約210字・見出しべつ</span></h3>
+    <p class="txt">【ボランティアカフェ、はじめます】
+
+お茶を飲みに来るだけで、かまいません。申込も登録もいりません。「何か役に立つことをしたいけれど、何から始めればいいか分からない」「引っ越してきたが知り合いがいない」――そんな方が、お茶を飲みながら集まる場です。町の活動の紹介、災害ボランティアセンターの体験、盆栽づくりもあります。
+
+とき　12月15日（火）午前9時30分〜正午
+ところ　粕川地区防災コミュニティセンター
+参加費　無料　／　申込不要
+問合せ　町社会福祉協議会ボランティアセンター（電話022-359-2753）</p>
+    <p class="why">
+      広報の原稿締切は開催のかなり前です（準備リストの8週前の項目）。締切を確認してから、この原稿をお渡しください。
+      字数の指定がある場合は、2段落目の体験の列挙から削ると、いちばん伝えたいところが残ります。
+    </p>
+  </div>
+
+  <div class="draft">
+    <h3>② 行政区の回覧 用<span class="cnt">約150字</span></h3>
+    <p class="txt">社会福祉協議会からのお知らせです。
+
+12月15日（火）午前9時30分から正午まで、粕川地区防災コミュニティセンターで「ボランティアカフェ」を開きます。お茶を飲みに来るだけでかまいません。申込も登録もいりません。参加費は無料です。町の活動の紹介、災害ボランティアセンターの体験、盆栽づくりをご用意しています。どなたでもお越しください。
+
+大郷町社会福祉協議会　ボランティアセンター　電話 022-359-2753</p>
+    <p class="why">
+      回覧は回りきるまで2〜3週間かかります。開催3週前には回りはじめるよう、区長さんへの依頼は4週前までに（準備リストのC欄）。
+    </p>
+  </div>
+
+  <div class="draft">
+    <h3>③ ホームページ・SNS 用<span class="cnt">約120字</span></h3>
+    <p class="txt">【12/15（火）ボランティアカフェ、はじめます】
+
+お茶を飲みに来るだけで、かまいません。申込も登録もいりません。参加費無料。
+町の活動紹介／災害ボランティアセンター体験／盆栽づくり
+
+▷ 12月15日（火）9:30〜12:00
+▷ 粕川地区防災コミュニティセンター（駐車場あり）
+▷ お問い合わせ 022-359-2753（大郷町社協ボランティアセンター）</p>
+    <p class="why">
+      チラシの画像を添えると伝わりが違います。このページをブラウザでPDFに書き出すと、そのまま添付できます。
+    </p>
+  </div>
+
+  <div class="draft">
+    <h3>④ 電話・手渡しで声をかけるときの言いかた<span class="cnt">読み上げ用</span></h3>
+    <p class="txt">「社協の○○です。12月15日の午前中に、粕川の防災コミュニティセンターで、ボランティアカフェという集まりを始めます。お茶を飲みながら、町でどんな活動があるかをお話しする会です。申込も何もいりませんし、参加費もかかりません。
+
+途中で帰っていただいてもかまいませんので、よろしければ顔を出していただけませんか。○○さんに来ていただけると、心強いです。」</p>
+    <p class="why">
+      第1回は、チラシだけでは人が来ません。紙は「知ってもらう」ため、この電話は「来てもらう」ためのものです。
+      まず20人に、名簿を見ながらかけてください（準備リストの3週前）。前日のリマインドの一本で、来場がはっきり変わります。
+    </p>
+  </div>
+
+  <div class="memo">
+    <b>刷る前に決めるところ（色のついた2か所）</b>
+    <ol>
+      <li>事前連絡の締切 — 1週前の12月8日（月）としています。開催要項と同じ日にしてあります。</li>
+      <li>記念品 — 中身が決まっていれば「（内容は当日のおたのしみ）」を差し替えると、来場の動機がひとつ増えます。決まっていなければ、このままで問題ありません。</li>
+    </ol>
+    <b>部数のめやす</b> — 回覧用（行政区の数）＋窓口＋手渡し用（まず20人分）＋掲示用（公民館・支所・診療所・商店・郵便局・スーパー・温泉施設・集会所）。
+    印刷は10月26日までに終えて、役場へお持ちください（準備リストのC欄）。
+  </div>
+
+  <p class="footnote" style="margin-top:34px">
+    ボランティアカフェ（第1回）チラシ　案<br>
+    大郷町社会福祉協議会　ボランティアセンター事業
+  </p>
+
+</div>
