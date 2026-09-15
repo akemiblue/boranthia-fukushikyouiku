@@ -1,0 +1,224 @@
+<title>ボランティアカフェ 申込フォーム設置手順</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  --paper:#F5F7F1; --card:#FFFFFF; --card-2:#FBFCF8;
+  --ink:#22302A; --ink-2:#5A6A61; --ink-3:#86958C;
+  --line:#D9E0D4; --line-2:#EBEFE7;
+  --green:#2E7D5B; --green-bg:#E6F1EA;
+  --cafe:#8A5A2B; --cafe-bg:#F2E9DF;
+  --gold:#8A6D0B; --gold-bg:#F7EFD7;
+  --shadow:0 1px 0 rgba(34,48,42,.06), 0 6px 18px -12px rgba(34,48,42,.35);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+  --line:#33403A; --line-2:#2A342E;
+  --green:#77C9A0; --green-bg:#1E3229;
+  --cafe:#D8A874; --cafe-bg:#33251A;
+  --gold:#E0B84F; --gold-bg:#332A15;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --paper:#141A16; --card:#1C231E; --card-2:#212A24;
+  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
+  --line:#33403A; --line-2:#2A342E;
+  --green:#77C9A0; --green-bg:#1E3229;
+  --cafe:#D8A874; --cafe-bg:#33251A;
+  --gold:#E0B84F; --gold-bg:#332A15;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 6px 18px -12px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);margin:0;
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  font-size:15.5px;line-height:1.9;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:44px 22px 90px}
+h1,h2,h3{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;text-wrap:balance;margin:0;line-height:1.45}
+p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.crest{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.14em;
+  font-weight:700;color:var(--cafe);border:1.5px solid var(--cafe);padding:5px 13px;border-radius:2px}
+h1{font-size:clamp(26px,4.6vw,38px);font-weight:900;margin:12px 0 0}
+.lede{font-size:15.5px;color:var(--ink-2);margin-top:12px;max-width:40em}
+section{margin-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--ink-3)}
+h2{font-size:clamp(20px,3.2vw,26px);font-weight:900}
+.rule{height:1.5px;background:var(--ink);border:0;margin:12px 0 20px}
+.note{font-size:14.5px;color:var(--ink-2);max-width:42em}
+
+.why{border-left:3px solid var(--gold);background:var(--gold-bg);padding:14px 18px;font-size:14.5px;line-height:1.9;margin-top:6px}
+.why b{font-weight:700}
+
+.steps{display:grid;margin-top:8px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:2.6em 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--cafe);color:#fff;display:grid;place-items:center;
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:16px}
+.step h3{font-size:17.5px;font-weight:900;margin-bottom:5px}
+.step p{font-size:14.5px;color:var(--ink-2)}
+.step .do{margin-top:9px;font-size:13.5px;background:var(--cafe-bg);color:var(--ink);padding:9px 13px;border-radius:2px;display:inline-block}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;
+  background:var(--line-2);padding:1px 6px;border-radius:3px;color:var(--ink)}
+
+.fns{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+.fns th,.fns td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.fns thead th{font-size:11.5px;letter-spacing:.12em;color:var(--ink-3);border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.fns td:first-child{white-space:nowrap}
+.tbl-scroll{overflow-x:auto}
+
+.qlist{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:6px}
+.q{background:var(--card);padding:13px 16px}
+.q b{font-weight:700;font-size:14.5px}
+.q span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:2px}
+.q .req{font-size:10.5px;font-weight:700;color:var(--cafe);border:1px solid var(--cafe);border-radius:2px;padding:0 5px;margin-left:7px;vertical-align:2px}
+
+.qa{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:6px}
+.qa-item{background:var(--card);padding:16px 18px}
+.qa-item h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;gap:9px}
+.qa-item h3::before{content:"Q";font-weight:900;color:var(--gold);font-size:16px;flex:none}
+.qa-item p{font-size:14px;color:var(--ink-2);padding-left:22px;line-height:1.85}
+.footnote{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);line-height:1.9}
+
+@media print{
+  @page{size:A4 portrait;margin:14mm}
+  :root{--paper:#fff;--card:#fff;--card-2:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--line:#bbb;--line-2:#ddd;--shadow:none}
+  body{font-size:10.5pt;line-height:1.7}
+  .wrap{max-width:none;padding:0}
+  h1{font-size:21pt}h2{font-size:14pt}
+  .step,.qa-item,.q,.why{break-inside:avoid}
+  .sec-head,h2{break-after:avoid}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="crest">大郷町社会福祉協議会　ボランティアセンター事業</span>
+  <h1>申込フォームの<br>設置手順</h1>
+  <p class="lede">ボランティアカフェの申し込みをGoogleフォームで受け、<strong>申込完了メール</strong>と<strong>開催2日前のリマインドメール</strong>を自動で送るための手順です。作業は15分ほど、パソコンで行います。</p>
+  <div class="why">
+    <b>なぜスクリプトを使うのか。</b>Googleフォームだけでも「回答のコピーを送信」はできますが、それは決まった形の控えが届くだけで、<b>文面を社協の言葉にすることも、開催2日前にもう一度送ることもできません</b>。そのため、Googleの標準機能である Apps Script（アップススクリプト）を使います。プログラムはこちらで用意してあるので、貼り付けて実行するだけです。
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">STEP</span><h2>6つの手順</h2></div>
+  <hr class="rule">
+  <p class="note">用意するもの：パソコン、社協のGoogleアカウント、お渡ししたファイル <code>volunteer-cafe-form.gs</code>（メモ帳などで開けます）。</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="n">1</div>
+      <div>
+        <h3>Apps Script を開く</h3>
+        <p>ブラウザで <code>script.google.com</code> を開き、社協のGoogleアカウントでログインします。左上の<strong>「新しいプロジェクト」</strong>をクリックします。</p>
+        <div class="do">プロジェクト名は「ボランティアカフェ申込フォーム」などにしておくと、あとで探しやすくなります</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">2</div>
+      <div>
+        <h3>プログラムを貼り付ける</h3>
+        <p>画面中央に <code>function myFunction() { }</code> と書かれた枠があります。<strong>その中身をすべて消して</strong>、お渡しした <code>volunteer-cafe-form.gs</code> の中身をすべてコピーして貼り付けます。貼り付けたら、上の保存ボタン（フロッピーのアイコン）を押します。</p>
+        <div class="do">ファイルはメモ帳やテキストエディタで開いてください。Wordで開くと、記号が別の文字に変わってしまいます</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">3</div>
+      <div>
+        <h3>タイムゾーンと中身を確かめる</h3>
+        <p>左側の歯車マーク（プロジェクトの設定）を開き、タイムゾーンが<strong>「(GMT+09:00) 日本標準時」</strong>になっているか確かめます。ちがう場合は直してください。ここがずれていると、リマインドが別の日に送られます。</p>
+        <p style="margin-top:8px">つづけてコード画面に戻り、上のほうにある <code>CONFIG</code> の中の日付・会場・メールアドレスが合っているか目で確かめます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">4</div>
+      <div>
+        <h3>フォームをつくる（1回だけ）</h3>
+        <p>画面上のほうにある関数の選択欄で <strong>createForm</strong> を選び、<strong>「実行」</strong>を押します。はじめての実行では、Googleから「このアプリを許可しますか」と聞かれます。社協のアカウントを選び、<strong>「詳細」→「（プロジェクト名）に移動」→「許可」</strong>と進んでください。</p>
+        <div class="do">下の実行ログに<strong>「配布用URL」</strong>が出ます。このURLをメモしてください。チラシのQRコードは、このURLから作ります</div>
+        <p style="margin-top:8px;color:var(--cafe);font-weight:700">createForm は一度だけ実行します。もう一度押すと、別のフォームがもう一つできてしまいます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">5</div>
+      <div>
+        <h3>自動メールを動かす</h3>
+        <p>つづけて、関数の選択欄で <strong>setupTriggers</strong> を選び、「実行」を押します。これで、申し込みが届いたときの控えメールと、毎朝9時のリマインド確認が動き出します。</p>
+        <div class="do">リマインドは <strong>12月13日（日）の朝9時ごろ</strong>に、申込者へ一斉に送られます</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">6</div>
+      <div>
+        <h3>確かめる</h3>
+        <p><strong>checkSetup</strong> を実行すると、フォームのURL、申込人数、自動メールの設定状況が実行ログに出ます。<strong>sendTestMail</strong> を実行すると、申込完了メールの文面がご自分あてに届きます。</p>
+        <div class="do">仕上げに、配布用URLを開いてご自分で一度申し込んでみてください。控えメールが届けば完成です（テストの回答は、あとでフォームの回答画面から消せます）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">そのあと使うもの</span><h2>あとから実行できる機能</h2></div>
+  <hr class="rule">
+  <div class="tbl-scroll">
+    <table class="fns">
+      <thead><tr><th>関数の名前</th><th>何をするか</th><th>使うとき</th></tr></thead>
+      <tbody>
+        <tr><td><code>checkSetup</code></td><td>フォームのURL、申込人数、自動メールの設定状況を表示</td><td>いつでも。週1回見ると安心です</td></tr>
+        <tr><td><code>sendTestMail</code></td><td>申込完了メールの文面を自分あてに送る</td><td>文面を直したあと</td></tr>
+        <tr><td><code>sendReminderNow</code></td><td>リマインドを今すぐ送る</td><td>2日前を待たずに送りたいとき</td></tr>
+        <tr><td><code>closeForm</code></td><td>申し込みの受付を止める</td><td>定員50人に達したとき、締切をすぎたとき</td></tr>
+        <tr><td><code>openForm</code></td><td>受付を再開する</td><td>キャンセルが出て、また受けられるとき</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:14px">申し込みが1件届くたびに、社協あてにも通知メールが届きます。<strong>定員まで残り5人になると、通知に「★」つきの知らせが入ります。</strong>メールアドレスを書かなかった方には控えもリマインドも届かないので、その人数もあわせてお知らせします。お電話でご連絡ください。</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">フォームの中身</span><h2>できあがる設問</h2></div>
+  <hr class="rule">
+  <p class="note">手でフォームを作りたい場合の参考にもなります。その場合は、フォームの画面から「拡張機能 → Apps Script」を開いてプログラムを貼り付け、<code>setupTriggers</code> だけを実行してください（<code>createForm</code> は実行しません）。<strong>設問名は下のとおりにしてください。</strong>名前がちがうと、自動メールの宛先を読み取れません。</p>
+  <div class="qlist">
+    <div class="q"><b>お名前<span class="req">必須</span></b><span>例：大郷 花子</span></div>
+    <div class="q"><b>ふりがな</b><span>例：おおさと はなこ</span></div>
+    <div class="q"><b>お住まいの地区</b><span>例：粕川、中村、味明 など</span></div>
+    <div class="q"><b>電話番号<span class="req">必須</span></b><span>当日ご連絡がつく番号</span></div>
+    <div class="q"><b>メールアドレス</b><span>控えと2日前のご案内をお送りします。お持ちでない場合は空欄で構いません</span></div>
+    <div class="q"><b>一緒に参加される方の人数<span class="req">必須</span></b><span>0人（本人のみ）／1人／2人／3人／4人以上　から選ぶ</span></div>
+    <div class="q"><b>当日、やってみたいこと</b><span>いくつでも選べます。災害ボランティアセンターの運営体験／段ボールベッドの組み立て／防災グッズ・防災バッグ／盆栽ボランティア／配食ボランティア／交流したい／相談したい</span></div>
+    <div class="q"><b>体調や移動のことで、配慮が必要なこと</b><span>段差、いすの用意、車いす、送迎など</span></div>
+    <div class="q"><b>社協へのご質問・ひとこと</b></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">よくあるつまずき</span><h2>うまくいかないとき</h2></div>
+  <hr class="rule">
+  <div class="qa">
+    <div class="qa-item"><h3>「承認が必要です」と出て先に進めない</h3><p>「詳細」→「（プロジェクト名）に移動」→「許可」の順に進みます。この画面は、自分で書いたプログラムを初めて動かすときに必ず出るもので、問題ありません。</p></div>
+    <div class="qa-item"><h3>リマインドが届かない</h3><p>まずタイムゾーンが日本標準時か確かめてください。次に <code>checkSetup</code> で、リマインドが「設定ずみ」になっているか見ます。それでも不安なら、前日に <code>sendReminderNow</code> で手動送信できます。</p></div>
+    <div class="qa-item"><h3>同じ人に2回届いてしまわないか</h3><p>送った方のアドレスを記録しているので、二重には送りません。<code>sendReminderNow</code> を2回押しても大丈夫です。</p></div>
+    <div class="qa-item"><h3>メールが送れる数に上限はあるか</h3><p>無料のGmailは1日100通までです。定員50人なら問題ありません。</p></div>
+    <div class="qa-item"><h3>文面を直したい</h3><p>プログラムの中の日本語の部分を書き換えて保存するだけです。直したら <code>sendTestMail</code> で確かめてください。</p></div>
+    <div class="qa-item"><h3>誰のアカウントで作るか</h3><p>個人のアカウントではなく、<strong>社協のアカウント</strong>で作ってください。担当が代わっても引き継げます。メールの差出人も社協になります。</p></div>
+  </div>
+</section>
+
+<p class="footnote">
+  ボランティアカフェ　申込フォーム設置手順<br>
+  大郷町社会福祉協議会　ボランティアセンター事業<br>
+  プログラム本体：<code>apps-script/volunteer-cafe-form.gs</code>
+</p>
+
+</div>
