@@ -1,247 +1,205 @@
-<title>ボランティアカフェ 開催要項</title>
+<title>ボランティアカフェ 実施要項</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap">
 
 <style>
 /* ============================================================
    大郷町社会福祉協議会 ボランティアセンター事業
-   ボランティアカフェ（第1回）開催要項　A4縦・1枚
+   ボランティアカフェ 実施要項　A4縦
+   （地域支え合い推進協議体の講座実施要項と同じ書式）
    ============================================================ */
 :root{
   --paper:#F5F7F1; --card:#FFFFFF;
-  --ink:#22302A; --ink-2:#5A6A61; --ink-3:#86958C;
-  --line:#D9E0D4; --line-2:#EBEFE7;
-  --green:#2E7D5B; --green-bg:#E6F1EA;
-  --gold:#8A6D0B; --gold-bg:#F7EFD7;
+  --ink:#1F2A24; --ink-2:#4E5C54; --ink-3:#86958C;
+  --line:#C9D2C4; --line-2:#E4EAE0;
+  --green:#2E7D5B; --gold:#8A6D0B; --gold-bg:#F7EFD7;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#141A16; --card:#1C231E;
-    --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
-    --line:#33403A; --line-2:#2A342E;
-    --green:#77C9A0; --green-bg:#1E3229;
-    --gold:#E0B84F; --gold-bg:#332A15;
+    --paper:#141A16; --card:#1B221D;
+    --ink:#E9F0E9; --ink-2:#AEBCB3; --ink-3:#7D8C83;
+    --line:#3A463F; --line-2:#2A342E;
+    --green:#77C9A0; --gold:#E0B84F; --gold-bg:#332A15;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#141A16; --card:#1C231E;
-  --ink:#E9F0E9; --ink-2:#A9B7AE; --ink-3:#7D8C83;
-  --line:#33403A; --line-2:#2A342E;
-  --green:#77C9A0; --green-bg:#1E3229;
-  --gold:#E0B84F; --gold-bg:#332A15;
+  --paper:#141A16; --card:#1B221D;
+  --ink:#E9F0E9; --ink-2:#AEBCB3; --ink-3:#7D8C83;
+  --line:#3A463F; --line-2:#2A342E;
+  --green:#77C9A0; --gold:#E0B84F; --gold-bg:#332A15;
 }
 *{box-sizing:border-box}
 body{
   background:var(--paper); color:var(--ink); margin:0;
   font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-  font-size:15.5px; line-height:1.95; -webkit-font-smoothing:antialiased;
+  font-size:15.5px; line-height:2.0; -webkit-font-smoothing:antialiased;
 }
 .sheet{max-width:760px;margin:0 auto;padding:44px 24px 80px}
 p{margin:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
-/* 発信欄 */
-.issue{display:flex;justify-content:flex-end;flex-direction:column;align-items:flex-end;gap:2px;
-  font-size:13.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
-
-/* 標題 */
-.h1-lead{display:block;font-size:.62em;letter-spacing:.04em;margin-bottom:6px}
+.fy{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.02em}
 h1{
-  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
-  font-weight:900;font-size:clamp(24px,4.4vw,32px);text-align:center;
-  margin:26px 0 0;letter-spacing:.06em;line-height:1.5;
+  font-family:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;
+  font-weight:700;font-size:clamp(20px,3.4vw,26px);line-height:1.65;
+  margin:6px 0 0;letter-spacing:.02em;
 }
-.h1-sub{text-align:center;font-size:14px;color:var(--ink-2);margin-top:8px;letter-spacing:.08em}
-.h1-rule{height:2px;background:var(--ink);border:0;margin:18px 0 8px}
+.rule{height:1.5px;background:var(--ink);border:0;margin:16px 0 0}
 
-.preamble{font-size:14.5px;color:var(--ink-2);margin-top:20px}
-
-/* 本文の項目 */
-dl.items{margin:22px 0 0;display:grid;grid-template-columns:7.5em 1fr;gap:0}
-dl.items dt{
-  border-top:1px solid var(--line);padding:13px 12px 13px 0;
-  font-weight:700;font-size:14.5px;color:var(--ink);
-  display:flex;gap:.5em;align-items:baseline;
+/* 番号つきの項目 */
+ol.youkou{list-style:none;margin:26px 0 0;padding:0;counter-reset:y}
+ol.youkou > li{
+  counter-increment:y;
+  display:grid;grid-template-columns:2.2em 8.2em 1fr;
+  gap:0 .4em;padding:11px 0;border-bottom:1px solid var(--line-2);
 }
-dl.items dt .no{color:var(--green);font-variant-numeric:tabular-nums;font-weight:700;flex:none}
-dl.items dd{border-top:1px solid var(--line);padding:13px 0 13px 12px;margin:0;font-size:15px}
-dl.items dd .sub{display:block;font-size:13.5px;color:var(--ink-2);margin-top:4px;line-height:1.85}
-dl.items dd strong{font-weight:700}
-dl.items .last{border-bottom:1px solid var(--line)}
+ol.youkou > li::before{
+  content:counter(y) ".";
+  font-weight:700;color:var(--green);font-variant-numeric:tabular-nums;
+}
+ol.youkou .k{font-weight:700;letter-spacing:.3em;white-space:nowrap}
+ol.youkou .k::after{content:"："}
+ol.youkou .v{min-width:0}
+ol.youkou .v > p + p{margin-top:.35em}
+ol.youkou .v .idt{text-indent:1em}
+ol.youkou .v .bl{display:block;padding-left:1.1em;text-indent:-1.1em}
+ol.youkou .v .bl + .bl{margin-top:.1em}
+ol.youkou .v .in{display:block;padding-left:1.1em;font-size:14.5px;color:var(--ink-2);line-height:1.85}
+ol.youkou .v .sm{font-size:14px;color:var(--ink-2)}
+ol.youkou .v .t{font-variant-numeric:tabular-nums}
 @media (max-width:560px){
-  dl.items{grid-template-columns:1fr}
-  dl.items dt{border-bottom:0;padding-bottom:0}
-  dl.items dd{border-top:0;padding-left:0;padding-top:4px}
+  ol.youkou > li{grid-template-columns:2.2em 1fr}
+  ol.youkou .k{grid-column:2}
+  ol.youkou .v{grid-column:2;margin-top:.2em}
+  ol.youkou .k{letter-spacing:.2em}
 }
 
-/* 未確定のところ */
 .tbd{background:var(--gold-bg);color:var(--gold);font-weight:700;padding:0 .35em;border-radius:2px}
 
-/* 日程表 */
-table.tt{width:100%;border-collapse:collapse;margin-top:6px;font-size:14.5px}
-table.tt th,table.tt td{border-bottom:1px solid var(--line-2);padding:8px 10px;text-align:left;vertical-align:top}
-table.tt thead th{
-  font-size:11.5px;letter-spacing:.12em;color:var(--ink-3);font-weight:700;
-  border-bottom:1.5px solid var(--ink);white-space:nowrap;
-}
-table.tt td.t{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums;width:8.5em}
-table.tt td .d{display:block;font-size:13px;color:var(--ink-2);margin-top:2px;line-height:1.8}
-table.tt tr.hl td{background:var(--green-bg)}
-
-/* 問合せ */
-.contact{border:2px solid var(--ink);background:var(--card);padding:20px 22px;margin-top:34px}
-.contact .lbl{font-size:11.5px;letter-spacing:.16em;color:var(--ink-3);font-weight:700}
-.contact .org{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:16.5px;display:block;margin-top:6px}
-.contact .body{font-size:14.5px;color:var(--ink-2);line-height:1.95;margin-top:6px}
-.contact .tel{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:20px;color:var(--green);
-  font-variant-numeric:tabular-nums;vertical-align:-2px}
-.contact .tel-lbl{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ink-3);margin-right:6px}
-
+.foot{margin-top:30px;border-top:1.5px solid var(--ink);padding-top:14px;font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.foot .org{font-weight:700;color:var(--ink);display:block}
 .memo{margin-top:26px;border-left:3px solid var(--gold);background:var(--gold-bg);padding:14px 18px;font-size:13.5px;line-height:1.9;color:var(--ink)}
 .memo b{font-weight:700}
-.footnote{margin-top:26px;font-size:12.5px;color:var(--ink-3);line-height:1.9}
 
 @media print{
-  @page{size:A4 portrait;margin:18mm 16mm}
-  :root{--paper:#fff;--card:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--line:#999;--line-2:#ccc;--green:#000;--gold:#555;--gold-bg:#fff;--green-bg:#f0f0f0}
-  body{font-size:10.5pt;line-height:1.8}
+  @page{size:A4 portrait;margin:18mm 17mm}
+  :root{--paper:#fff;--card:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--line:#666;--line-2:#ccc;--green:#000;--gold:#555;--gold-bg:#fff}
+  body{font-size:10.5pt;line-height:1.9}
   .sheet{max-width:none;padding:0}
-  h1{font-size:19pt}
-  dl.items dt,dl.items dd{padding-top:9px;padding-bottom:9px}
-  table.tt{font-size:10pt}
+  h1{font-size:15pt}
+  ol.youkou > li{padding:8px 0;break-inside:avoid}
   .tbd{background:none;border-bottom:1.5px dotted #666;color:#000}
-  .memo{break-inside:avoid}
-  .contact{break-inside:avoid}
   .no-print{display:none}
 }
 </style>
 
 <div class="sheet">
 
-  <div class="issue">
-    <span>令和8年　　月　　日</span>
-    <span>大郷町社会福祉協議会</span>
-  </div>
+  <p class="fy">令和８年度　大郷町ボランティアセンター事業</p>
+  <h1>第１回「大郷町の防災とボランティア活動を考えるボランティアカフェ」実施要項</h1>
+  <hr class="rule">
 
-  <h1><span class="h1-lead">第1回　大郷町の防災とボランティア活動を考える</span>ボランティアカフェ　開催要項</h1>
-  <p class="h1-sub">大郷町社会福祉協議会　ボランティアセンター事業</p>
-  <hr class="h1-rule">
+  <ol class="youkou">
 
-  <p class="preamble">標記について、下記のとおり開催します。</p>
+    <li><span class="k">目　的</span><span class="v">
+      <p class="idt">近年、全国各地で豪雨や地震などの災害が頻発しており、大規模災害の発生時には、公的支援が行き届くまでの間、地域住民同士の協力が欠かせません。しかしながら、災害時に助け合える関係は、災害が起きてから短期間で築けるものではなく、平時からの顔の見える関係の積み重ねによって、はじめて機能します。</p>
+      <p class="idt">また、災害時に支援が必要となるのは、高齢の方、障がいのある方、ひとり暮らしの方など、日ごろから地域とのつながりが細くなりやすい方々です。誰がどこに住み、どのような手助けを必要としているのかを、近所同士が平時から知っていることが、いざというときの支えになります。</p>
+      <p class="idt">本事業は、災害ボランティアセンターの運営体験や段ボールベッドの組み立て体験をとおして、災害時の支え合いの仕組みを学ぶとともに、町内で活動しているボランティアを知り、住民同士が平時から顔見知りとなる機会を設けることにより、災害に強く、誰も孤立しない地域づくりを進めることを目的に開催します。</p>
+    </span></li>
 
-  <dl class="items">
-    <dt><span class="no">1</span>目的</dt>
-    <dd>
-      全国で災害が頻発するなか、大規模災害が起きたときに欠かせないのは地域の協力である。しかし、その協力は、災害が起きてから急につくれるものではない。
-      <span class="sub">本事業は、災害ボランティアセンターの運営や段ボールベッドの組み立てを実際に体験する機会をとおして、災害時に町内で支え合う力を高めるとともに、町内で活動しているボランティアを知り、住民が平時のうちに顔見知りとなる場をつくることで、孤立・孤独のない地域づくりを進めることを目的とする。</span>
-    </dd>
+    <li><span class="k">主　催</span><span class="v">
+      <p>社会福祉法人　大郷町社会福祉協議会（大郷町ボランティアセンター）</p>
+    </span></li>
 
-    <dt><span class="no">2</span>名称</dt>
-    <dd>第1回　大郷町の防災とボランティア活動を考える　ボランティアカフェ</dd>
+    <li><span class="k">講　師</span><span class="v">
+      <p><span class="tbd">　　　　　　　　　　　　　　　　　　</span></p>
+      <p class="sm">※ 講話「ボランティアとは」「災害ボランティアセンターの役割と活動の流れ」の担当者を記入</p>
+    </span></li>
 
-    <dt><span class="no">3</span>主催</dt>
-    <dd>社会福祉法人　大郷町社会福祉協議会（ボランティアセンター）</dd>
+    <li><span class="k">日　時</span><span class="v">
+      <p class="t">令和８年１２月１５日（火）　ＡＭ９：３０ ～ ＰＭ１２：００</p>
+      <p class="sm t">※ ＡＭ９：００ 開場・受付開始</p>
+    </span></li>
 
-    <dt><span class="no">4</span>日時</dt>
-    <dd>
-      令和8年（2026年）12月15日（火）　午前9時30分 〜 正午12時00分
-      <span class="sub">午前9時00分　開場・受付開始</span>
-    </dd>
+    <li><span class="k">会　場</span><span class="v">
+      <p>大郷町粕川地区防災コミュニティーセンター</p>
+      <p class="sm">（大郷町粕川字伝三郎３４　駐車場あり）</p>
+    </span></li>
 
-    <dt><span class="no">5</span>会場</dt>
-    <dd>
-      粕川地区防災コミュニティーセンター
-      <span class="sub">大郷町粕川字伝三郎34　　駐車場あります。</span>
-    </dd>
+    <li><span class="k">内　容</span><span class="v">
+      <p class="bl"><span class="t">・　９：３０</span>　開会（あいさつ、本日の流れ、参加者の自己紹介）</p>
+      <p class="bl"><span class="t">・１０：００</span>　講話「ボランティアとは」「災害ボランティアセンターの役割と活動の流れ」</p>
+      <p class="bl"><span class="t">・１１：００</span>　体験・展示・交流
+        <span class="in">災害ボランティアセンター運営体験（受付→ニーズ受付→マッチング→送り出し）</span>
+        <span class="in">段ボールベッドの組み立て体験</span>
+        <span class="in">最新の防災グッズ、防災バッグの中身の展示</span>
+        <span class="in">町内で活動しているボランティアの紹介（配食ボランティア、盆栽ボランティア）</span>
+        <span class="in">カフェスペースでの交流（お茶を飲みながらの相談・情報交換）</span>
+      </p>
+      <p class="bl"><span class="t">・１２：００</span>　閉会</p>
+    </span></li>
 
-    <dt><span class="no">6</span>対象</dt>
-    <dd>
-      どなたでも参加できます。
-      <span class="sub">年齢・経験は問いません。ボランティア活動をしたことがない方、これから始めたい方を歓迎します。</span>
-    </dd>
+    <li><span class="k">対　象</span><span class="v">
+      <p>全住民（防災や地域の支え合い、ボランティア活動に興味のある方）</p>
+      <p class="sm">年齢・経験は問いません。ボランティア活動をしたことがない方も歓迎します。</p>
+    </span></li>
 
-    <dt><span class="no">7</span>定員</dt>
-    <dd>50人</dd>
+    <li><span class="k">定　員</span><span class="v">
+      <p>５０人</p>
+    </span></li>
 
-    <dt><span class="no">8</span>参加費</dt>
-    <dd>無料</dd>
+    <li><span class="k">参加費</span><span class="v">
+      <p>無料</p>
+    </span></li>
 
-    <dt><span class="no">9</span>内容</dt>
-    <dd>
-      <table class="tt">
-        <thead>
-          <tr><th>時刻</th><th>内容</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="t">9:00 〜 9:30</td><td>開場・受付</td></tr>
-          <tr><td class="t">9:30 〜 10:00</td><td>開会　あいさつ、本日の流れ、参加者の自己紹介</td></tr>
-          <tr class="hl"><td class="t">10:00 〜 11:00</td><td>講座
-            <span class="d">前半　ボランティアとは — 町内でいま活動しているボランティアの紹介<br>
-            後半　災害ボランティアセンターの役割と、活動の流れについて</span></td></tr>
-          <tr class="hl"><td class="t">11:00 〜 12:00</td><td>体験・交流
-            <span class="d">・災害ボランティアセンターの運営体験（受付 → ニーズの受付 → マッチング → 送り出し）<br>
-            ・段ボールベッドの組み立て体験<br>
-            ・最新の防災グッズ、防災バッグの中身の展示<br>
-            ・町内で活動しているボランティアの紹介（配食ボランティア、盆栽ボランティア）<br>
-            ・カフェスペースで交流（お茶を飲みながらの相談・情報交換）<br>
-            ボランティア登録、活動先の見学のお申し込みも、この時間に受け付けます。</span></td></tr>
-          <tr><td class="t">12:00</td><td>閉会</td></tr>
-        </tbody>
-      </table>
-    </dd>
+    <li><span class="k">記念品</span><span class="v">
+      <p>参加者には記念品を贈呈</p>
+    </span></li>
 
-    <dt><span class="no">10</span>協力</dt>
-    <dd>
-      大郷町の防災士のみなさん（依頼中）<br>高橋　文之　氏（盆栽ボランティア）　／　配食ボランティアのみなさん
-    </dd>
+    <li><span class="k">協　力</span><span class="v">
+      <p>大郷町の防災士のみなさん（依頼中）</p>
+      <p>高橋　文之　氏（盆栽ボランティア）、配食ボランティアのみなさん</p>
+      <p class="sm">防災バッグは、大郷町役場総務課防災対策室からお借りします。</p>
+    </span></li>
 
-    <dt><span class="no">11</span>持ちもの</dt>
-    <dd>
-      とくにありません。
-      <span class="sub">段ボールベッドの組み立てや盆栽の体験がありますので、動きやすく、汚れてもよい服装でお越しください。</span>
-    </dd>
+    <li><span class="k">周知の方法</span><span class="v">
+      <p>全戸配布チラシ（１０月・１１月）、回覧、社協ＨＰ、ＳＮＳ（公式ＬＩＮＥ、フェイスブック）、町内店舗・公民館等への掲示、町広報、役場公式ＬＩＮＥ</p>
+    </span></li>
 
-    <dt><span class="no">12</span>申込</dt>
-    <dd>
-      お電話、または申込フォーム（チラシのQRコード）からお申し込みください。
-      <span class="sub">電話　022-359-2753（大郷町ボランティアセンター　担当　及川・千田・金須）<br>
-      定員になり次第、締め切ります。準備の都合上、<span class="tbd">12月8日（月）</span>までにお申し込みください。</span>
-    </dd>
+    <li><span class="k">申込の方法</span><span class="v">
+      <p>電話・ＦＡＸ・メール・Ｇｏｏｇｌｅフォーム（チラシのＱＲコード）</p>
+      <p class="sm t">電話 ０２２－３５９－２７５３　　ＦＡＸ ０２２－３５９－４８９６</p>
+    </span></li>
 
-    <dt class="last"><span class="no">13</span>その他</dt>
-    <dd class="last">
-      <span class="sub" style="margin-top:0">
-        (1) 少雨・降雪にかかわらず実施します。警報の発表等により中止する場合は、当日午前7時までに社協からご連絡します。<br>
-        (2) 会場内で記録用の写真を撮影します。写りたくない方は、受付でお申し出ください。<br>
-        (3) 活動中の事故に備える保険の取扱いについては、<span class="tbd">社協で加入手続きを行います</span>。<br>
-        (4) 本事業は、住民のみなさんが平時からつながる場として、今後も継続して開催していく予定です。
-      </span>
-    </dd>
-  </dl>
+    <li><span class="k">申込締切</span><span class="v">
+      <p class="t">令和８年<span class="tbd">１２月８日（月）</span></p>
+      <p class="sm">※ 定員になり次第、締め切ります。</p>
+    </span></li>
 
-  <div class="contact">
-    <span class="lbl">お問い合わせ・お申し込み</span>
-    <span class="org">社会福祉法人 大郷町社会福祉協議会　ボランティアセンター</span>
-    <p class="body">
-      <span class="tel-lbl">TEL</span><span class="tel">022-359-2753</span>　FAX 022-359-4896<br>
-      メール community@oosato-syakyo.or.jp<br>
-      住所 宮城県黒川郡大郷町粕川字東長崎31-7<br>
-      受付時間 平日 8:30〜17:15（土日祝・年末年始を除く）　担当 及川・千田・金須
-    </p>
+    <li><span class="k">そ の 他</span><span class="v">
+      <p class="bl">・少雨・降雪にかかわらず実施します。警報の発表等により中止する場合は、当日ＡＭ７：００までに社協からご連絡します。</p>
+      <p class="bl">・段ボールベッドの組み立てや盆栽の体験がありますので、動きやすく、汚れてもよい服装でお越しください。持ちものはとくにありません。</p>
+      <p class="bl">・会場内で記録用の写真を撮影します。写りたくない方は、受付でお申し出ください。</p>
+      <p class="bl">・活動中の事故に備える保険の取扱いについては、<span class="tbd">社協で加入手続きを行います</span>。</p>
+      <p class="bl">・本事業は、住民が平時からつながる場として、今後も継続して開催していく予定です。</p>
+    </span></li>
+
+  </ol>
+
+  <div class="foot">
+    <span class="org">【お問い合わせ・お申し込み】社会福祉法人 大郷町社会福祉協議会　大郷町ボランティアセンター</span>
+    〒９８１－３５０１　宮城県黒川郡大郷町粕川字東長崎３１－７<br>
+    ＴＥＬ ０２２－３５９－２７５３　ＦＡＸ ０２２－３５９－４８９６　メール community@oosato-syakyo.or.jp<br>
+    受付時間 平日 ８：３０〜１７：１５（土日祝・年末年始を除く）　担当　及川・千田・金須
   </div>
 
   <div class="memo no-print">
-    <b>決裁の前に埋めるところ（色のついた2か所）</b><br>
-    ① 申込の締切 — 1週前の12月8日（月）としています。チラシに締切の記載がないため、社協内で確認してください。<br>
-    ② 保険の取扱い — ボランティア活動保険の加入状況を確認のうえ、文言を確定してください（準備リストの4週前の項目）。<br>
-    中止連絡の時刻（当日午前7時）も仮置きです。あわせて発信日をご記入ください。<br>
-    内容はチラシ「第1回 大郷町の防災とボランティア活動を考える ボランティアカフェ開催！」に合わせています。この枠は印刷されません。
+    <b>決裁の前に埋めるところ（色のついた３か所）</b><br>
+    ① 講師 — 講話を担当する方のお名前・肩書き。外部にお願いする場合は、謝礼と依頼文が必要です（準備リストの５週前の項目）。<br>
+    ② 申込締切 — １週前の１２月８日（月）としています。チラシに締切の記載がないため、社協内で確認してください。<br>
+    ③ 保険の取扱い — ボランティア活動保険の加入状況を確認のうえ、文言を確定してください（準備リストの４週前の項目）。<br>
+    郵便番号と、中止連絡の時刻（ＡＭ７：００）も仮置きです。周知の方法は、地域支え合い推進協議体の要項に合わせて書いています。実際に使う媒体に直してください。この枠は印刷されません。
   </div>
-
-  <p class="footnote">
-    ボランティアカフェ（第1回）開催要項　案<br>
-    大郷町社会福祉協議会　ボランティアセンター事業
-  </p>
 
 </div>
