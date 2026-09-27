@@ -8,6 +8,7 @@
 ## ファイル
 
 - `volunteer-cafe-roadmap.html` — 構想と行程（ロードマップ）第1版。ブラウザで開けます。1ファイル完結。
+- `make-qr.py` — 申込フォームのQRコードを作るスクリプト（`python3 make-qr.py "フォームのURL"`）。
 - `apps-script/volunteer-cafe-form.gs` — 申込フォームの自動作成、申込完了メール、開催2日前のリマインドメール。
 - `ボランティアカフェ_実施要項.docx` — 実施要項のWord版（地域支え合い推進協議体の要項と同じ書式）。
 - `volunteer-cafe-youkou.html` — 第1回の実施要項（案）。A4縦で印刷できます。
@@ -53,8 +54,8 @@ Googleフォームで申し込みを受け、申込完了メールと開催2日�
 1. script.google.com で新しいプロジェクトを作り、このファイルの中身をすべて貼り付ける
 2. プロジェクトの設定で、タイムゾーンが「(GMT+09:00) 日本標準時」か確認する
 3. `CONFIG` の日付・会場・メールアドレスを確認する
-4. `createForm` を1回だけ実行する（実行ログに出る配布用URLでQRコードを作ります）
-5. `setupTriggers` を実行する（これで自動メールが動きます）
+4. `setup` を1回だけ実行する（フォームの作成と自動メールの設定が、これ1つでそろいます）
+5. 実行ログに出る配布用URLで、`make-qr.py` を使ってQRコードを作る
 6. `checkSetup` で設定状況、`sendTestMail` で文面を確認できます
 
 そのほか、`sendReminderNow`（リマインドを今すぐ送る）、`closeForm`／`openForm`

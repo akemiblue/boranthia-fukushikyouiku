@@ -141,17 +141,17 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
       <div class="n">4</div>
       <div>
         <h3>フォームをつくる（1回だけ）</h3>
-        <p>画面上のほうにある関数の選択欄で <strong>createForm</strong> を選び、<strong>「実行」</strong>を押します。はじめての実行では、Googleから「このアプリを許可しますか」と聞かれます。社協のアカウントを選び、<strong>「詳細」→「（プロジェクト名）に移動」→「許可」</strong>と進んでください。</p>
+        <p>画面上のほうにある関数の選択欄で <strong>setup</strong> を選び、<strong>「実行」</strong>を押します。これ1つで、フォームの作成と自動メールの設定が両方そろいます。はじめての実行では、Googleから「このアプリを許可しますか」と聞かれます。社協のアカウントを選び、<strong>「詳細」→「（プロジェクト名）に移動」→「許可」</strong>と進んでください。</p>
         <div class="do">下の実行ログに<strong>「配布用URL」</strong>が出ます。このURLをメモしてください。チラシのQRコードは、このURLから作ります</div>
-        <p style="margin-top:8px;color:var(--cafe);font-weight:700">createForm は一度だけ実行します。もう一度押すと、別のフォームがもう一つできてしまいます。</p>
+        <p style="margin-top:8px;color:var(--cafe);font-weight:700">setup は一度だけ実行します。もう一度押すと、別のフォームがもう一つできてしまいます。</p>
       </div>
     </div>
 
     <div class="step">
       <div class="n">5</div>
       <div>
-        <h3>自動メールを動かす</h3>
-        <p>つづけて、関数の選択欄で <strong>setupTriggers</strong> を選び、「実行」を押します。これで、申し込みが届いたときの控えメールと、毎朝9時のリマインド確認が動き出します。</p>
+        <h3>QRコードを作る</h3>
+        <p>手順4の実行ログに出た<strong>配布用URL</strong>を使って、QRコードを作ります。無料です。外部のQR作成サイトは使いません（サービスが終わるとQRが読めなくなるため）。社協にお渡ししている <code>make-qr.py</code> にURLを渡すと、チラシ用のSVGと印刷用のPNGができます。</p>
         <div class="do">リマインドは <strong>12月13日（日）の朝9時ごろ</strong>に、申込者へ一斉に送られます</div>
       </div>
     </div>
