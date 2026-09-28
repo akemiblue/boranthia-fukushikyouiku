@@ -55,6 +55,8 @@ const CONFIG = {
   countItemTitle: '一緒に参加される方の人数',
   sourceItemTitle: 'この催しをどこでお知りになりましたか',
   followItemTitle: '今後、ボランティア活動のご案内をお送りしてもよろしいですか',
+  wishItemTitle: '当日、とくに体験してみたいこと（いくつでも／決まっていなくても大丈夫です）',
+  bonsaiChoice: '盆栽づくりを体験してみたい（希望者のみ）',
 };
 
 const TZ = 'Asia/Tokyo';
@@ -85,7 +87,8 @@ function createForm() {
     CONFIG.venue + '（' + CONFIG.venueAddress + '）\n' +
     '定員 ' + CONFIG.capacity + '人　参加費 無料　どなたでも参加できます\n\n' +
     '災害ボランティアセンターの運営体験、段ボールベッドの組み立て、最新の防災グッズの展示、\n' +
-    '町内で活動しているボランティアの紹介など、見て・さわって・話せる時間です。\n' +
+    '町内で活動しているボランティア（配食・盆栽）の紹介など、見て・さわって・話せる時間です。\n' +
+    '盆栽は、ご希望の方は実際に鉢づくりを体験していただけます。\n' +
     'お茶を飲みながらの交流もあります。はじめての方も、どうぞお気軽にお越しください。\n\n' +
     '申込の締切　' + CONFIG.deadlineText + '（定員になり次第、締め切ります）\n' +
     'お電話でもお申し込みいただけます。　TEL ' + CONFIG.tel + '（' + CONFIG.hours + '）'
@@ -141,7 +144,7 @@ function createForm() {
     .setRequired(true);
 
   form.addCheckboxItem()
-    .setTitle('当日、とくに体験してみたいこと（いくつでも／決まっていなくても大丈夫です）')
+    .setTitle(CONFIG.wishItemTitle)
     .setChoiceValues([
       '災害ボランティアセンターの運営体験',
       '段ボールベッドの組み立て',
@@ -149,6 +152,7 @@ function createForm() {
       '防災バッグの中身を見る',
       '配食ボランティアの紹介を見る',
       '盆栽ボランティアの紹介を見る',
+      '盆栽づくりを体験してみたい（希望者のみ）',
       'カフェスペースで交流したい',
       'ボランティア活動の相談をしたい',
       'まだ決めていない／全部見てみたい',
@@ -263,7 +267,8 @@ function onFormSubmit(e) {
         notice +
         '申込フォームに新しい回答が届きました。\n' +
         '受付日時：' + Utilities.formatDate(new Date(), TZ, 'yyyy年M月d日 HH:mm') + '\n' +
-        '現在の申込人数：' + total + '人（定員 ' + CONFIG.capacity + '人）\n\n' +
+        '現在の申込人数：' + total + '人（定員 ' + CONFIG.capacity + '人）\n' +
+        '盆栽づくりの体験希望：' + countBonsai_() + '人　← 材料の数はこれに合わせてください\n\n' +
         '────────────────────\n' +
         a.text +
         '────────────────────\n\n' +
@@ -393,6 +398,7 @@ function checkSetup() {
   Logger.log('　配布用URL：' + form.getShortUrl());
   Logger.log('　受付：' + (form.isAcceptingResponses() ? '受付中' : '停止中'));
   Logger.log('■ 申込人数：' + countTotal_() + '人（回答 ' + form.getResponses().length + '件／定員 ' + CONFIG.capacity + '人）');
+  Logger.log('■ 盆栽づくりの体験希望：' + countBonsai_() + '人');
   Logger.log('■ 申込完了メール：' + (names.indexOf('onFormSubmit') >= 0 ? '設定ずみ' : '未設定（setupTriggers を実行してください）'));
   Logger.log('■ リマインド　　：' + (names.indexOf('checkReminder') >= 0 ? '設定ずみ' : '未設定（setupTriggers を実行してください）'));
   Logger.log('　送信予定日：' + reminderDateText_() + '（開催の' + CONFIG.reminderDaysBefore + '日前）の朝9時ごろ');
@@ -444,6 +450,17 @@ function reminderDateText_() {
   const d = new Date(CONFIG.eventDate + 'T00:00:00+09:00');
   d.setDate(d.getDate() - CONFIG.reminderDaysBefore);
   return Utilities.formatDate(d, TZ, 'M月d日（E）');
+}
+
+// 盆栽づくりの体験を希望した人数
+function countBonsai_() {
+  const responses = findForm_().getResponses();
+  let n = 0;
+  for (let i = 0; i < responses.length; i++) {
+    const a = readAnswersFromResponse_(responses[i]);
+    if (String(a.map[CONFIG.wishItemTitle] || '').indexOf(CONFIG.bonsaiChoice) >= 0) n += 1;
+  }
+  return n;
 }
 
 // 申込の合計人数（本人＋同伴者）
