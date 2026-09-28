@@ -1,6 +1,6 @@
 /**
  * 大郷町社会福祉協議会　ボランティアセンター事業
- * 第1回 大郷町の防災とボランティア活動を考える「ボランティアカフェ」
+ * 第1回「ボランティア楽校＆カフェ」（大郷町の防災とボランティア活動を知る・体験する・つながる）
  * 申込フォームの自動作成 ＋ 申込完了メール ＋ 2日前リマインドメール
  *
  * 【使い方】
@@ -24,12 +24,12 @@
 // ============================================================
 const CONFIG = {
   // --- 催しのこと ---
-  eventName: '第1回 大郷町の防災とボランティア活動を考える ボランティアカフェ',
-  eventShortName: 'ボランティアカフェ',
+  eventName: '第1回 大郷町の防災とボランティア活動を知る・体験する・つながる ボランティア楽校＆カフェ',
+  eventShortName: 'ボランティア楽校＆カフェ',
   eventDate: '2026-12-15',           // 開催日（yyyy-MM-dd）
   eventDateText: '令和8年12月15日（火）',
   eventTimeText: '午前9時30分 〜 正午12時00分（9時00分 開場・受付開始）',
-  venue: '粕川地区防災コミュニティーセンター',
+  venue: '粕川地区防災コミュニティセンター',
   venueAddress: '大郷町粕川字伝三郎34（駐車場あります）',
   capacity: 50,                       // 定員
   deadline: '2026-12-08',            // 申込の締切（yyyy-MM-dd）
@@ -53,6 +53,8 @@ const CONFIG = {
   emailItemTitle: 'メールアドレス',
   telItemTitle: '電話番号',
   countItemTitle: '一緒に参加される方の人数',
+  sourceItemTitle: 'この催しをどこでお知りになりましたか',
+  followItemTitle: '今後、ボランティア活動のご案内をお送りしてもよろしいですか',
 };
 
 const TZ = 'Asia/Tokyo';
@@ -115,6 +117,11 @@ function createForm() {
     .setTitle('お住まいの地区')
     .setHelpText('例：粕川、中村、味明　など');
 
+  form.addListItem()
+    .setTitle('年代')
+    .setHelpText('催しのふりかえりに使わせていただきます')
+    .setChoiceValues(['10代以下', '20〜30代', '40〜50代', '60代', '70代', '80代以上', '答えたくない']);
+
   form.addTextItem()
     .setTitle(CONFIG.telItemTitle)
     .setHelpText('当日ご連絡がつく番号をお願いします')
@@ -134,20 +141,43 @@ function createForm() {
     .setRequired(true);
 
   form.addCheckboxItem()
-    .setTitle('当日、やってみたいこと（いくつでも／決まっていなくても大丈夫です）')
+    .setTitle('当日、とくに体験してみたいこと（いくつでも／決まっていなくても大丈夫です）')
     .setChoiceValues([
       '災害ボランティアセンターの運営体験',
       '段ボールベッドの組み立て',
-      '最新の防災グッズ・防災バッグの中身を見る',
-      '盆栽ボランティアの紹介を見る',
+      '最新の防災グッズにさわってみる',
+      '防災バッグの中身を見る',
       '配食ボランティアの紹介を見る',
-      'お茶を飲みながら交流したい',
+      '盆栽ボランティアの紹介を見る',
+      'カフェスペースで交流したい',
       'ボランティア活動の相談をしたい',
+      'まだ決めていない／全部見てみたい',
     ]);
 
   form.addParagraphTextItem()
     .setTitle('体調や移動のことで、配慮が必要なことはありますか')
     .setHelpText('段差、いすの用意、車いす、送迎など。書いていただければ、できる範囲で準備します。');
+
+  form.addCheckboxItem()
+    .setTitle(CONFIG.sourceItemTitle)
+    .setHelpText('これからの広報の参考にさせていただきます（いくつでも）')
+    .setChoiceValues([
+      '全戸配布のチラシ',
+      '回覧',
+      '町の広報',
+      '社協のホームページ',
+      '社協のLINE・フェイスブック',
+      '役場のLINE',
+      'お店や公民館の掲示',
+      '知り合いにさそわれて',
+      '社協の職員から',
+      'その他',
+    ]);
+
+  form.addMultipleChoiceItem()
+    .setTitle(CONFIG.followItemTitle)
+    .setHelpText('ボランティアの募集や、次回のカフェのご案内をお送りします')
+    .setChoiceValues(['はい', 'いいえ']);
 
   form.addParagraphTextItem()
     .setTitle('社協へのご質問・ひとこと');
