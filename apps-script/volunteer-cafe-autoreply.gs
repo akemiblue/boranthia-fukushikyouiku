@@ -57,8 +57,10 @@ const CONFIG = {
   nameItemTitle: 'お名前',
   // 下の3つは「あれば使う」ものです。フォームになくても動きます。
   countKeyword: '人数',      // この文字を含む設問があれば、参加人数として数えます
-  bonsaiKeyword: '盆栽',     // この文字を含む答えがあれば、盆栽体験の希望として数えます
-  bonsaiWish: '体験',        // 盆栽の答えの中に、さらにこの文字があるものを希望とみなします
+  bonsaiKeyword: '盆栽',     // この文字を含む選択肢がある設問を、盆栽の設問とみなします
+  // 盆栽づくりの体験を希望した人を数えるための選択肢。フォームの選択肢と
+  // 一字一句そろえてください。ちがうと数えられません。
+  bonsaiWishChoice: '盆栽づくりを体験してみたい',
 };
 
 const TZ = 'Asia/Tokyo';
@@ -335,21 +337,36 @@ function countTotal_() {
   return total;
 }
 
-// 盆栽体験の希望者数。そういう設問がなければ null を返す（表示しない）。
+// 盆栽づくりの体験を希望した人数。その選択肢がフォームになければ null を返す。
 function countBonsai_() {
-  const responses = FormApp.getActiveForm().getResponses();
-  let n = 0, exists = false;
+  const form = FormApp.getActiveForm();
+  // まず、その選択肢がフォームにあるか確かめる
+  let exists = false;
+  const items = form.getItems();
+  for (let i = 0; i < items.length && !exists; i++) {
+    let choices = [];
+    try {
+      const t = items[i].getType();
+      if (t === FormApp.ItemType.CHECKBOX) choices = items[i].asCheckboxItem().getChoices();
+      else if (t === FormApp.ItemType.MULTIPLE_CHOICE) choices = items[i].asMultipleChoiceItem().getChoices();
+      else if (t === FormApp.ItemType.LIST) choices = items[i].asListItem().getChoices();
+    } catch (e) { choices = []; }
+    for (let j = 0; j < choices.length; j++) {
+      if (choices[j].getValue() === CONFIG.bonsaiWishChoice) { exists = true; break; }
+    }
+  }
+  if (!exists) return null;
+
+  // 選択肢を丸ごと含む答えだけを数える（ほかの「体験」と混ざらないように）
+  const responses = form.getResponses();
+  let n = 0;
   for (let i = 0; i < responses.length; i++) {
     const a = readAnswers_(responses[i]);
     for (const title in a.map) {
-      const v = String(a.map[title] || '');
-      if (v.indexOf(CONFIG.bonsaiKeyword) >= 0) {
-        exists = true;
-        if (v.indexOf(CONFIG.bonsaiWish) >= 0) n += 1;
-      }
+      if (String(a.map[title] || '').indexOf(CONFIG.bonsaiWishChoice) >= 0) { n += 1; break; }
     }
   }
-  return exists ? n : null;
+  return n;
 }
 
 function reminderDate_() {
